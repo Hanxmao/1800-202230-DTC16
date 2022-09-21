@@ -5,7 +5,7 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
+* Hi my name is Jack. I love cats...
 	
 ## Technologies
 Technologies used for this project:
