@@ -7,6 +7,8 @@
 ## General Info
 * Hi my name is Jack. I love cats...
 	
+This browser based web application to ...
+* My name is Han, Thank you.
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
