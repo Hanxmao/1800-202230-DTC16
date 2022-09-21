@@ -5,16 +5,9 @@
 * [Contents](#content)
 
 ## General Info
-<<<<<<< HEAD
 
-This browser based web application to ... Hi, my name is Paolo.
+* This browser based web application to ... Hi, my name is Paolo. :)
 
-=======
-* Hi my name is Jack. I love cats...
-	
-This browser based web application to ...
-* My name is Han, Thank you.
->>>>>>> e5abf05cb788dc0d0db5b9ba324f971a4596f86e
 ## Technologies
 
 Technologies used for this project:
