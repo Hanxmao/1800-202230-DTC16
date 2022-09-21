@@ -6,7 +6,7 @@
 
 ## General Info
 This browser based web application to ...
-	
+* My name is Han, Thank you.
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
