@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>My BCIT Project</title>
+  <title>Credo - Login</title>
   <meta name="comp1800 template" content="My 1800 App" />
 
   <!-- Required meta tags -->
@@ -45,7 +45,7 @@
           <a href="#" class="nav-link">My Cards</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Explor Credit Cards</a>
+          <a href="#" class="nav-link">Explore Credit Cards</a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">My favorite cards</a>
@@ -78,14 +78,19 @@
         Find and manage a credit card that suits your lifestyle - all in
         <i>one</i> place!
       </p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
           Login
         </button>
         <button type="button" class="btn btn-outline-secondary btn-lg px-4">
           Sign up
         </button>
+      </div> -->
+      <div class="container">
+        <h1>Let's Login!</h1>
       </div>
+      <div id="firebaseui-auth-container"></div>
+      <div id="loader">Loading...</div>
     </div>
   </div>
 
@@ -139,6 +144,10 @@
 
   <!-- Link to scripts of your own -->
   <!-- <script src="./scripts/script.js"></script> -->
+  <script src="./scripts/firebaseAPI_template.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <!-- <script src="./scripts/script.js"></script> -->
+  <script src="./scripts/authentication.js"></script>
 </body>
 
 <script src="/scripts/script.js"></script>
