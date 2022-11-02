@@ -1,7 +1,18 @@
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
 
 
 
@@ -13,12 +24,12 @@
 
 }
 
-span img{
+span img {
     width: 48px;
     height: 48px;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -48,12 +59,12 @@ li {
     color: white
 }
 
-a{
+a {
     color: white;
     text-decoration: none;
 }
 
-.navbar{
+.navbar {
     min-height: 70px;
     display: flex;
     justify-content: space-between;
@@ -61,22 +72,22 @@ a{
     padding: 0 24px;
 }
 
-.nav-menu li{
-    display:block;
+.nav-menu li {
+    display: block;
     justify-content: space-between;
     gap: 60px;
     text-align: right;
 }
 
-.nav-branding{
+.nav-branding {
     font-size: 2rem;
 }
 
-.nav-link{
-   transition: 0.7s ease;
+.nav-link {
+    transition: 0.7s ease;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: blue;
 }
 
@@ -84,12 +95,12 @@ a{
     float: right;
 }
 
-.hamburger{
+.hamburger {
     display: none;
     cursor: pointer;
 }
 
-.bar{
+.bar {
     display: block;
     width: 25px;
     height: 3px;
@@ -99,23 +110,25 @@ a{
     background-color: white;
 }
 
-@media(max-width: 650px){
-    .hamburger{
+@media(max-width: 650px) {
+    .hamburger {
         display: block;
     }
 
-    .hamburger.active .bar:nth-child(2){
+    .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
-    .hamburger.active .bar:nth-child(1){
+
+    .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
-    .hamburger.active .bar:nth-child(3){
+
+    .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    .nav-menu{
-        position:fixed;
+    .nav-menu {
+        position: fixed;
         left: -100%;
         top: 70px;
         gap: 0;
@@ -126,11 +139,11 @@ a{
         transition: 0.1s;
     }
 
-    .nav-items{
+    .nav-items {
         margin: 16px 0;
     }
 
-    .nav-menu.active{
+    .nav-menu.active {
         left: 0;
     }
 }
