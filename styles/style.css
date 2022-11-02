@@ -45,6 +45,7 @@ header {
 li {
     list-style: none;
     margin: 20px;
+    color: white
 }
 
 a{
@@ -80,7 +81,7 @@ a{
 }
 
 .nav-items{
-    float: right;""
+    float: right;
 }
 
 .hamburger{
@@ -119,7 +120,7 @@ a{
         top: 70px;
         gap: 0;
         flex-direction: column;
-        background-color: #262626;
+        background-color: black;
         width: 100%;
         text-align: center;
         transition: 0.1s;
