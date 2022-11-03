@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="/styles/surveystyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 id="title" style="text-align: center">Survey for Credo users</h1>
+        <p id="description" style="text-align: center">
+          Please answer some simple questions on this page to get your credit
+          card recommendations.
+        </p>
+      </header>
+      <form action="" id="survey-form">
+        <!-- Text section -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="formControl"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+        <!-- end of text section -->
+
+        <!-- Type Email section -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="formControl"
+            placeholder="Enter your Email"
+            required
+          />
+        </div>
+        <!-- end of Email section -->
+
+        <!-- Type Number section -->
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="number"
+            name="phone"
+            id="phone"
+            class="formControl"
+            placeholder="Enter your phone number"
+            required
+          />
+        </div>
+        <!-- end of Number section -->
+
+        <!-- Type Number section -->
+        <div class="form-group">
+          <label for="address"
+            >Address <span class="clue">(optional)</span></label
+          >
+          <input
+            type="text"
+            name="address"
+            id="address"
+            class="formControl"
+            placeholder="Enter your address"
+          />
+        </div>
+        <!--  end of number section -->
+
+        <!-- select section -->
+        <div class="form-group">
+          <p id="quest"><h4>Which option best describes your current situation?</h4></p>
+          <select name="role" required id="dropdown" class="formControl">
+            <option value disabled selected>Select current situation</option>
+            <option value="student">Student</option>
+            <option value="teacher">Working</option>
+            <option value="job">Unemployed</option>
+            <option value="other">Retired</option>
+          </select>
+        </div>
+        <!-- end of select section -->
+
+        <!-- radio button section -->
+        <div class="form-group">
+          <p id="quest"><h4>Which age group do you belong in?</h4></p>
+          <label for="">
+            <input
+              type="radio"
+              name="source"
+              value="Under 18"
+              class="inputRadio"
+              checked
+            />
+            Under 18
+          </label>
+          <label for="">
+            <input
+              type="radio"
+              name="source"
+              value="19 to 25"
+              class="inputRadio"
+            />19 to 25
+          </label>
+          <label for="">
+            <input
+              type="radio"
+              name="source"
+              value="26 to 40"
+              class="inputRadio"
+            />
+            26 to 40
+          </label>
+          <label for="">
+            <input
+              type="radio"
+              name="source"
+              value="41 to 60"
+              class="inputRadio"
+            />
+            41 to 60
+          </label>
+          <label for="">
+            <input
+              type="radio"
+              name="source"
+              value="61 or older"
+              class="inputRadio"
+            />
+            61 or older
+          </label>
+        </div>
+
+        <div>
+          <p><h4>What is your personal annual income?</h4></p>
+
+          <input
+            type="radio"
+            name="income"
+            id="Under $30,000"
+            value="$30,000"
+          />
+          <label for="Under $30,000">Under $30,000</label>
+          <br />
+          <input
+            type="radio"
+            name="income"
+            id="Between $30,000 to $60,000"
+            value="$30,000 to $60,000"
+          />
+          <label for="Between $30,000 to $60,000">
+            Between $30,000 to $60,000</label
+          >
+          <br />
+          <input
+            type="radio"
+            name="income"
+            id="Between $60,000 to $100,000"
+            value="$60,000 to $100,000"
+          />
+          <label for="Between $60,000 to $100,000"
+            >Between $60,000 to $100,000</label
+          >
+          <br />
+          <input
+            type="radio"
+            name="income"
+            id="More than $100,000"
+            value="More than $100,000"
+          />
+          <label for="More than $100,000">More than $100,000</label>
+        </div>
+
+        <div>
+            <p><h4>What is your credit score?</h4></p>
+  
+            <input
+              type="radio"
+              name="credit_score"
+              id="300-559"
+              value="300-559"
+            />
+            <label for="300-559">300-559</label>
+            <br />
+            <input
+              type="radio"
+              name="credit_score"
+              id="560-659"
+              value="560-659"
+            />
+            <label for="560-659"
+              >560-659</label
+            >
+            <br />
+            <input
+              type="radio"
+              name="credit_score"
+              id="660-759"
+              value="660-759"
+            />
+            <label for="660-759">660-759</label>
+            <br />
+            <input
+              type="radio"
+              name="credit_score"
+              id="760-900"
+              value="760-900"
+            />
+            <label for="760-900">
+                760-900</label
+            >
+          </div>
+        <div>
+        <p><h4>What is your knowledge about financial products (eg. credit cards,
+        loans, investments, etc.)?</h4></p>
+
+        <input type="radio" name="knowledge" id="certified" value="certified" />
+        <label for="certified"
+          >Certified or went through systematic training/education about
+          financial products</label
+        >
+        <br />
+        <input
+          type="radio"
+          name="knowledge"
+          id="Active user"
+          value="Active user"
+        />
+        <label for="Active user">
+          Active user and possesses sound knowledge of different financial
+          products</label
+        >
+        <br />
+        <input type="radio" name="knowledge" id="basic" value="basic" />
+        <label for="basic"
+          >Have a basic understanding of some financial products</label
+        >
+        <br />
+        <input type="radio" name="knowledge" id="none" value="none" />
+        <label for="none">None or very limited knowledge</label>
+
+        <div class="form-group">
+            <p id="quest"><h4>How many credit cards do you have right now?</h4></p>
+            <select name="number" required id="dropdown" class="formControl">
+              <option value disabled selected>Select a number</option>
+              <option value="0">0</option>
+              <option value="1 to 2">1 to 2</option>
+              <option value="3 to 5">3 to 5</option>
+              <option value="6 or more">6 or more</option>
+            </select>
+          </div>
+        <!-- end of radio button -->
+
+        <!-- Checkbox section -->
+        <div class="form-group">
+          <p id="quest"><h4>Which of the following credit card benefits & rewards appeal to you?</h4></p>
+          <label for="">
+            <input
+                type="checkbox"
+                name="prefer"
+                class="checkbox"
+                value="Travel rewards"
+            />
+            Travel rewards
+          </label>
+          <label for="">
+            <input
+              type="checkbox"
+              name="prefer"
+              class="checkbox"
+              value="Cashback rewards"
+            />
+            Cashback rewards
+          </label>
+          <label for="">
+            <input
+              type="checkbox"
+              name="prefer"
+              class="checkbox"
+              value="Everyday rewards"
+            />
+            Everyday rewards
+          </label>
+          <label for="">
+            <input
+              type="checkbox"
+              name="prefer"
+              class="checkbox"
+              value="Low interest"
+            />
+            Low interest
+          </label>
+        </label>
+        <label for="">
+          <input
+            type="checkbox"
+            name="prefer"
+            class="checkbox"
+            value="No annual fee"
+          />
+          No annual fee
+        </label>
+        </div>
+        <!-- End of checkbox section -->
+
+        <!-- Textarea section -->
+        <div class="form-group">
+          <p id="quest">Feel free to leave any feedbacks!</p>
+          <textarea
+            name="feedback"
+            cols="30"
+            rows="5"
+            id="feedback"
+            class="textarea"
+            placeholder="Enter your feedback here..."
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" id="submit" class="btn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
