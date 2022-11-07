@@ -12,8 +12,12 @@
     <!-- font-awesome, icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- firebase CDN link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 </head>
 
 <body>
@@ -79,31 +83,11 @@
             </div>
         </div>
     </main>
-    <footer class="navbar justify-content-evenly fixed-bottom bg-secondary">
-        <div class="container">
-          <span
-            ><a href="#"
-              ><img style="width: 48px;height: 48px;"
-                src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png"
-                alt="home icon" /></a
-          ></span>
-          <span
-            ><a href="#"
-              ><img style="width: 48px;height: 48px;"
-                src="https://cdn-icons-png.flaticon.com/512/3441/3441960.png"
-                alt="cards icon" /></a
-          ></span>
-          <span
-            ><a href="#"
-              ><img style="width: 48px;height: 48px;"
-                src="https://cdn-icons-png.flaticon.com/512/8683/8683630.png"
-                alt="tips icon" /></a
-          ></span>
-        </div>
-      </footer>
+    <nav id="footerPlaceholder"></nav>
 
     <script src="./scripts/firebaseAPI_template.js"></script>
-      <script src="./scripts/card_list.js"></script>
+    <script src="./scripts/card_list.js"></script>
+    <script src="./scripts/skeleton.js"></script>
 
 </body>
 
