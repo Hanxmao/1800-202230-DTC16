@@ -34,8 +34,9 @@ function writeCards() {
     let cardsRef = db.collection("credit_card");
 
     cardsRef.add({
-        code:"RBC001", // for img, should be band+number
-        name: "RBC Travel-related Make-up Card",    //replace with your own city?
+        code:"RBC001", // for img, should be bank+number
+        name: "RBC Travel-related Make-up Card",  
+        category:"travel",  
         bank: "RBC",
         description: "5x points on travel purchased through this card, excluding hotel purchases that qualify for the $50 Annual Ultimate Rewards Hotel Credit. 3x points on select streaming services and online grocery purchases",
         interest_rate: "16.99%",
@@ -47,8 +48,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"RBC002", // for img, should be band+number
-        name: "RBC Cash Back Make-up Card",    //replace with your own city?
+        code:"RBC002", // for img, should be bank+number
+        name: "RBC Cash Back Make-up Card",   
+        category:"cash_back",  
         bank: "RBC",
         description: "Get Unlimited Cash Back on Your Purchases, plus your rewards accumulate automatically, so tracking is hassle-free. Link your card and instantly save 3¢/L on fuel and always earn 20% more Petro-Points at Petro-Canada. Get $0 delivery fees for 12 months from DoorDash",
         interest_rate: "29.99%",
@@ -60,8 +62,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"RBC003", // for img, should be band+number
-        name: "RBC Low Interest Make-up Card",    //replace with your own city?
+        code:"RBC003", // for img, should be bank+number
+        name: "RBC Low Interest Make-up Card",   
+        category:"low_interest",   
         bank: "RBC",
         description: "If you choose to carry a balance on your card, the low 12.99% interest rate – on purchases and cash advances - lets you save on interest. Load personalized offers for great brands before you shop to get cash savings or to earn bonus points faster.",
         interest_rate: "12.99%",
@@ -73,8 +76,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"RBC004", // for img, should be band+number
-        name: "RBC Student-related make-up card",    //replace with your own city?
+        code:"RBC004", // for img, should be bank+number
+        name: "RBC Student-related make-up card",   
+        category:"student",   
         bank: "RBC",
         description: "Enjoy 6,000 points upon approval. Pay With Points Redeem your Avion points to pay bills, your credit card balance or even send money to friends with Interac e-Transfer. Minimum redemption is only $10, so you can use your points where you need them most.",
         interest_rate: "19.99%",
@@ -86,8 +90,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"RBC005", // for img, should be band+number
-        name: "RBC Business-related make-up card",    //replace with your own city?
+        code:"RBC005", // for img, should be bank+number
+        name: "RBC Business-related make-up card", 
+        category:"business",    
         bank: "RBC",
         description: "The benefits of a premium rewards program that gives your business the flexibility to redeem for travel as well as merchandise, gift cards or to pay back with points. A built-in suite of premium insurance coverage. Less than 5 cards in their expense program. To simplify accounting, employee reimbursement, and identify tax-deductible expenses",
         interest_rate: "19.99%",
@@ -99,8 +104,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"TD001", // for img, should be band+number
-        name: "TD Travel-related Make-up Card",    //replace with your own city?
+        code:"TD001", // for img, should be bank+number
+        name: "TD Travel-related Make-up Card",  
+        category:"travel",    
         bank: "TD",
         description: "5x points on travel purchased through this card, excluding hotel purchases that qualify for the $50 Annual Ultimate Rewards Hotel Credit. 3x points on select streaming services and online grocery purchases",
         interest_rate: "16.99%",
@@ -112,8 +118,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"TD002", // for img, should be band+number
-        name: "TD Cash Back Make-up Card",    //replace with your own city?
+        code:"TD002", // for img, should be bank+number
+        name: "TD Cash Back Make-up Card", 
+        category:"cash_back",    
         bank: "TD",
         description: "Get Unlimited Cash Back on Your Purchases, plus your rewards accumulate automatically, so tracking is hassle-free. Link your card and instantly save 3¢/L on fuel and always earn 20% more Petro-Points at Petro-Canada. Get $0 delivery fees for 12 months from DoorDash",
         interest_rate: "29.99%",
@@ -125,8 +132,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"TD003", // for img, should be band+number
-        name: "TD Low Interest Make-up Card",    //replace with your own city?
+        code:"TD003", // for img, should be bank+number
+        name: "TD Low Interest Make-up Card",   
+        category:"low_interest",   
         bank: "TD",
         description: "If you choose to carry a balance on your card, the low 12.99% interest rate – on purchases and cash advances - lets you save on interest. Load personalized offers for great brands before you shop to get cash savings or to earn bonus points faster.",
         interest_rate: "12.99%",
@@ -138,8 +146,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"TD004", // for img, should be band+number
-        name: "TD Student-related make-up card",    //replace with your own city?
+        code:"TD004", // for img, should be bank+number
+        name: "TD Student-related make-up card", 
+        category:"student",     
         bank: "TD",
         description: "Enjoy 6,000 points upon approval. Pay With Points Redeem your Avion points to pay bills, your credit card balance or even send money to friends with Interac e-Transfer. Minimum redemption is only $10, so you can use your points where you need them most.",
         interest_rate: "19.99%",
@@ -151,8 +160,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"TD005", // for img, should be band+number
-        name: "TD Business-related make-up card",    //replace with your own city?
+        code:"TD005", // for img, should be bank+number
+        name: "TD Business-related make-up card", 
+        category:"business",     
         bank: "TD",
         description: "The benefits of a premium rewards program that gives your business the flexibility to redeem for travel as well as merchandise, gift cards or to pay back with points. A built-in suite of premium insurance coverage. Less than 5 cards in their expense program. To simplify accounting, employee reimbursement, and identify tax-deductible expenses",
         interest_rate: "19.99%",
@@ -164,8 +174,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"BMO001", // for img, should be band+number
-        name: "BMO Travel-related Make-up Card",    //replace with your own city?
+        code:"BMO001", // for img, should be bank+number
+        name: "BMO Travel-related Make-up Card",  
+        category:"travel",    
         bank: "BMO",
         description: "5x points on travel purchased through this card, excluding hotel purchases that qualify for the $50 Annual Ultimate Rewards Hotel Credit. 3x points on select streaming services and online grocery purchases",
         interest_rate: "16.99%",
@@ -177,8 +188,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"BMO002", // for img, should be band+number
-        name: "BMO Cash Back Make-up Card",    //replace with your own city?
+        code:"BMO002", // for img, should be bank+number
+        name: "BMO Cash Back Make-up Card", 
+        category:"cash_back",     
         bank: "BMO",
         description: "Get Unlimited Cash Back on Your Purchases, plus your rewards accumulate automatically, so tracking is hassle-free. Link your card and instantly save 3¢/L on fuel and always earn 20% more Petro-Points at Petro-Canada. Get $0 delivery fees for 12 months from DoorDash",
         interest_rate: "29.99%",
@@ -190,8 +202,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"BMO003", // for img, should be band+number
-        name: "BMO Low Interest Make-up Card",    //replace with your own city?
+        code:"BMO003", // for img, should be bank+number
+        name: "BMO Low Interest Make-up Card", 
+        category:"low_interest",     
         bank: "BMO",
         description: "If you choose to carry a balance on your card, the low 12.99% interest rate – on purchases and cash advances - lets you save on interest. Load personalized offers for great brands before you shop to get cash savings or to earn bonus points faster.",
         interest_rate: "12.99%",
@@ -203,8 +216,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"BMO004", // for img, should be band+number
-        name: "BMO Student-related make-up card",    //replace with your own city?
+        code:"BMO004", // for img, should be bank+number
+        name: "BMO Student-related make-up card",
+        category:"student",      
         bank: "BMO",
         description: "Enjoy 6,000 points upon approval. Pay With Points Redeem your Avion points to pay bills, your credit card balance or even send money to friends with Interac e-Transfer. Minimum redemption is only $10, so you can use your points where you need them most.",
         interest_rate: "19.99%",
@@ -216,8 +230,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"BMO005", // for img, should be band+number
-        name: "BMO Business-related make-up card",    //replace with your own city?
+        code:"BMO005", // for img, should be bank+number
+        name: "BMO Business-related make-up card",  
+        category:"business",    
         bank: "BMO",
         description: "The benefits of a premium rewards program that gives your business the flexibility to redeem for travel as well as merchandise, gift cards or to pay back with points. A built-in suite of premium insurance coverage. Less than 5 cards in their expense program. To simplify accounting, employee reimbursement, and identify tax-deductible expenses",
         interest_rate: "19.99%",
@@ -229,8 +244,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"SC001", // for img, should be band+number
-        name: "SC Travel-related Make-up Card",    //replace with your own city?
+        code:"SC001", // for img, should be bank+number
+        name: "SC Travel-related Make-up Card", 
+        category:"travel",     
         bank: "SC",
         description: "5x points on travel purchased through this card, excluding hotel purchases that qualify for the $50 Annual Ultimate Rewards Hotel Credit. 3x points on select streaming services and online grocery purchases",
         interest_rate: "16.99%",
@@ -242,8 +258,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"SC002", // for img, should be band+number
-        name: "SC Cash Back Make-up Card",    //replace with your own city?
+        code:"SC002", // for img, should be bank+number
+        name: "SC Cash Back Make-up Card",  
+        category:"cash_back",    
         bank: "SC",
         description: "Get Unlimited Cash Back on Your Purchases, plus your rewards accumulate automatically, so tracking is hassle-free. Link your card and instantly save 3¢/L on fuel and always earn 20% more Petro-Points at Petro-Canada. Get $0 delivery fees for 12 months from DoorDash",
         interest_rate: "29.99%",
@@ -255,8 +272,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"SC003", // for img, should be band+number
-        name: "SC Low Interest Make-up Card",    //replace with your own city?
+        code:"SC003", // for img, should be bank+number
+        name: "SC Low Interest Make-up Card",   
+        category:"low_interest",   
         bank: "SC",
         description: "If you choose to carry a balance on your card, the low 12.99% interest rate – on purchases and cash advances - lets you save on interest. Load personalized offers for great brands before you shop to get cash savings or to earn bonus points faster.",
         interest_rate: "12.99%",
@@ -268,8 +286,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"SC004", // for img, should be band+number
-        name: "SC Student-related make-up card",    //replace with your own city?
+        code:"SC004", // for img, should be bank+number
+        name: "SC Student-related make-up card",  
+        category:"student",    
         bank: "SC",
         description: "Enjoy 6,000 points upon approval. Pay With Points Redeem your Avion points to pay bills, your credit card balance or even send money to friends with Interac e-Transfer. Minimum redemption is only $10, so you can use your points where you need them most.",
         interest_rate: "19.99%",
@@ -281,8 +300,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"SC005", // for img, should be band+number
-        name: "SC Business-related make-up card",    //replace with your own city?
+        code:"SC005", // for img, should be bank+number
+        name: "SC Business-related make-up card", 
+        category:"business",     
         bank: "SC",
         description: "The benefits of a premium rewards program that gives your business the flexibility to redeem for travel as well as merchandise, gift cards or to pay back with points. A built-in suite of premium insurance coverage. Less than 5 cards in their expense program. To simplify accounting, employee reimbursement, and identify tax-deductible expenses",
         interest_rate: "19.99%",
@@ -294,8 +314,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"CIB001", // for img, should be band+number
-        name: "CIB Travel-related Make-up Card",    //replace with your own city?
+        code:"CIB001", // for img, should be bank+number
+        name: "CIB Travel-related Make-up Card", 
+        category:"travel",     
         bank: "CIB",
         description: "5x points on travel purchased through this card, excluding hotel purchases that qualify for the $50 Annual Ultimate Rewards Hotel Credit. 3x points on select streaming services and online grocery purchases",
         interest_rate: "16.99%",
@@ -307,8 +328,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"CIB002", // for img, should be band+number
-        name: "CIB Cash Back Make-up Card",    //replace with your own city?
+        code:"CIB002", // for img, should be bank+number
+        name: "CIB Cash Back Make-up Card",    
+        category:"cash_back",  
         bank: "CIB",
         description: "Get Unlimited Cash Back on Your Purchases, plus your rewards accumulate automatically, so tracking is hassle-free. Link your card and instantly save 3¢/L on fuel and always earn 20% more Petro-Points at Petro-Canada. Get $0 delivery fees for 12 months from DoorDash",
         interest_rate: "29.99%",
@@ -320,8 +342,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"CIB003", // for img, should be band+number
-        name: "CIB Low Interest Make-up Card",    //replace with your own city?
+        code:"CIB003", // for img, should be bank+number
+        name: "CIB Low Interest Make-up Card",
+        category:"low_interest",      
         bank: "CIB",
         description: "If you choose to carry a balance on your card, the low 12.99% interest rate – on purchases and cash advances - lets you save on interest. Load personalized offers for great brands before you shop to get cash savings or to earn bonus points faster.",
         interest_rate: "12.99%",
@@ -333,8 +356,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"CIB004", // for img, should be band+number
-        name: "CIB Student-related make-up card",    //replace with your own city?
+        code:"CIB004", // for img, should be bank+number
+        name: "CIB Student-related make-up card", 
+        category:"student",     
         bank: "CIB",
         description: "Enjoy 6,000 points upon approval. Pay With Points Redeem your Avion points to pay bills, your credit card balance or even send money to friends with Interac e-Transfer. Minimum redemption is only $10, so you can use your points where you need them most.",
         interest_rate: "19.99%",
@@ -346,8 +370,9 @@ function writeCards() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()  
     });
     cardsRef.add({
-        code:"CIB005", // for img, should be band+number
-        name: "CIB Business-related make-up card",    //replace with your own city?
+        code:"CIB005", // for img, should be bank+number
+        name: "CIB Business-related make-up card", 
+        category:"business",     
         bank: "CIB",
         description: "The benefits of a premium rewards program that gives your business the flexibility to redeem for travel as well as merchandise, gift cards or to pay back with points. A built-in suite of premium insurance coverage. Less than 5 cards in their expense program. To simplify accounting, employee reimbursement, and identify tax-deductible expenses",
         interest_rate: "19.99%",
