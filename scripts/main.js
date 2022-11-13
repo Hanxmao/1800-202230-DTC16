@@ -16,33 +16,21 @@ function writeHikes() {
   var hikesRef = db.collection("hikes");
 
   hikesRef.add({
-    code: "BBY01",
-    name: "Burnaby Lake Park Trail", //replace with your own city?
-    city: "Burnaby",
-    province: "BC",
-    level: "easy",
-    length: "10",
-    details: "Elmo goes here regularly",
+    name: "CIB Travel-related Make-up Card",
+    bank: "CIB",
+    details: "Lorem Ipsum1",
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   hikesRef.add({
-    code: "AM01",
-    name: "Buntzen Lake Trail Trail", //replace with your own city?
-    city: "Anmore",
-    province: "BC",
-    level: "moderate",
-    length: "10.5",
-    details: "Elmo goes here regularly",
+    name: "BMO Student-related make-up card", //replace with your own city?
+    bank: "BMO",
+    details: "Lorem Ipsum2",
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   hikesRef.add({
-    code: "NV01",
-    name: "Mount Seymoure Trail", //replace with your own city?
-    city: "North Vancouver",
-    province: "BC",
-    level: "hard",
-    length: "8.2",
-    details: "Elmo goes here regularly",
+    name: "TD Low Interest Make-up Card", //replace with your own city?
+    bank: "TD",
+    details: "Lorem Ipsum3",
     last_updated: firebase.firestore.Timestamp.fromDate(
       new Date("March 10, 2022")
     ),
