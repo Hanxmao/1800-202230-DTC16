@@ -24,11 +24,11 @@
     <main>
         <div>
             <div class="">
-                <i class="fa fa-arrow-circle-left fa-2x col-2" aria-hidden="true" style="float:left;"></i>
-                <h1 class="m-0" style="display: inline-block;">Template Card Name</h1>
+                <i id='back_btn' class="fa fa-arrow-circle-left fa-2x col-2" aria-hidden="true" style="float:left;"></i>
+                <h3 class="m-0" style="display: inline-block;" id="cardName">Template Card Name</h3>
             </div>
             <div class="mx-4">
-                <img style="width: 100%; height: auto;"
+                <img style="width: 100%; height: auto;" id="card_img"
                     src="https://d6vdma9166ldh.cloudfront.net/media/images/1540976335764-pasted%20image%200.png"
                     alt="sample card">
             </div>
@@ -51,34 +51,34 @@
             <div>
                 <div class="row mx-1 bg-secondary bg-gradient bg-opacity-10">
                     <h3>Summary</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, eaque. Consequuntur beatae
+                    <p id="summary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, eaque. Consequuntur beatae
                         laudantium consectetur! Autem hic saepe neque explicabo veniam dolore vitae, reprehenderit
                         laboriosam quos repudiandae excepturi distinctio incidunt ad?</p>
                 </div>
                 <div class="row mx-1 my-2">
                     <h3>Details:</h3>
                     <div class="col">
-                        Interest rate:
+                        <p id="interest_rate">Interest rate:</p>
                     </div>
                     <div class="col">
-                        Welcome bonus:
+                        <p id="welcome_bonus">Welcome bonus:</p>
                     </div>
                 </div>
                 <div class="row mx-1 my-2">
                     <div class="col">
-                        Annual fees:
+                        <p id="annual_fee"></p>
                     </div>
                     <div class="col">
-                        Extra fee:
+                        <p id="extra_fee"></p>
                     </div>
                 </div>
                 <div class="row mx-1 my-2">
                     <div>Rewards:</div>
-                    <div class="mx-1"><p class="m-0"> Description here. BalaBalaBala.</p></div>
+                    <div class="mx-1"><p class="m-0" id="reward"> Description here. BalaBalaBala.</p></div>
                 </div>
                 <div class="row mx-1 my-2">
                     <p class="m-0">Benefit:</p>
-                    <div class="mx-1"><p class="m-0"> Description here. BalaBalaBala.</p></div>
+                    <div class="mx-1"><p class="m-0" id="benefit"> Description here. BalaBalaBala.</p></div>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
     <nav id="footerPlaceholder"></nav>
 
     <script src="./scripts/firebaseAPI_template.js"></script>
-    <script src="./scripts/card_list.js"></script>
+    <script src="./scripts/card_details.js"></script>
     <script src="./scripts/skeleton.js"></script>
 
 </body>
