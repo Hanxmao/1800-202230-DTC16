@@ -57,16 +57,15 @@ li {
 }
 
 nav > a {
-  color: white;
   text-decoration: none;
 }
 
 .navbar {
   min-height: 70px;
-  display: flex;
+  display: flexbox;
   justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 15px;
 }
 
 .nav-menu li {
@@ -82,10 +81,13 @@ nav > a {
 
 .nav-link {
   transition: 0.7s ease;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
 }
 
 .nav-link:hover {
-  color: blue;
+  color: red;
 }
 
 .nav-items {
@@ -119,7 +121,9 @@ nav > a {
   top: 70px;
   gap: 0;
   flex-direction: column;
-  background-color: black;
+  background-color: #ffffff;
+  opacity: 0.5;
+  filter: alpha(opacity=70);
   width: 100%;
   text-align: center;
   transition: 0.1s;
