@@ -170,6 +170,8 @@ nav > a {
     gap: 0;
     flex-direction: column;
     background-color: black;
+    opacity: 0.5;
+    filter: alpha(opacity=70);
     width: 100%;
     text-align: center;
     transition: 0.1s;
