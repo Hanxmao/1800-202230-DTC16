@@ -1,29 +1,29 @@
 var cardReview = localStorage.getItem("cardReview"); //visible to all functions on this page
 
-function getReviewName(ReviewName) {
-  db.collection("hikes")
-    .where("code", "==", ReviewName)
-    .get()
-    .then((queryHike) => {
-      //see how many items are returned from the query with ".size"
-      size = queryHike.size;
-      // get the documents returned from query with ".docs"
-      hikes = queryHike.docs;
+// function getReviewName(ReviewName) {
+//   db.collection("hikes")
+//     .where("code", "==", ReviewName)
+//     .get()
+//     .then((queryHike) => {
+//       //see how many items are returned from the query with ".size"
+//       size = queryHike.size;
+//       // get the documents returned from query with ".docs"
+//       hikes = queryHike.docs;
 
-      // We want to have one document per hike, so if the the result of
-      //the query is more than one, we can check it right now and clean the DB if needed.
-      if ((size = 1)) {
-        var thisHike = hikes[0].data();
-        name = thisHike.name;
-        document.getElementById("ReviewName").innerHTML = name;
-      } else {
-        console.log("Query has more than one data");
-      }
-    })
-    .catch((error) => {
-      console.log("Error getting documents: ", error);
-    });
-}
+//       // We want to have one document per hike, so if the the result of
+//       //the query is more than one, we can check it right now and clean the DB if needed.
+//       if ((size = 1)) {
+//         var thisReview = reviews[0].data();
+//         name = thisReview.name;
+//         document.getElementById("ReviewName").innerHTML = name;
+//       } else {
+//         console.log("Query has more than one data");
+//       }
+//     })
+//     .catch((error) => {
+//       console.log("Error getting documents: ", error);
+//     });
+// }
 
 function writeReview() {
   let Title = document.getElementById("title").value;
@@ -70,24 +70,22 @@ function writeReview() {
   });
 }
 
-var hikeID = localStorage.getItem("hikeID"); //visible to all functions on this page
+var reviewID = localStorage.getItem("reviewID"); //visible to all functions on this page
 
-function getHikeName(ReviewName) {
-  db.collection("hikes")
+function getReview(ReviewName) {
+  db.collection("reviews")
     .where("code", "==", ReviewName)
     .get()
-    .then((queryHike) => {
+    .then((queryReviews) => {
       //see how many items are returned from the query with ".size"
-      size = queryHike.size;
+      size = queryReviews.size;
       // get the documents returned from query with ".docs"
-      hikes = queryHike.docs;
+      reviews = queryReviews.docs;
 
-      // We want to have one document per hike, so if the the result of
-      //the query is more than one, we can check it right now and clean the DB if needed.
       if ((size = 1)) {
-        var thisHike = hikes[0].data();
-        name = thisHike.name;
-        document.getElementById("hikeName").innerHTML = name;
+        var thisReview = reviews[0].data();
+        name = thisReview.name;
+        document.getElementById("reviewName").innerHTML = name;
       } else {
         console.log("Query has more than one data");
       }
