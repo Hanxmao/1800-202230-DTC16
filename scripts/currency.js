@@ -22,7 +22,18 @@ setup = ()=>{
         });
     })
 
-
+    $.ajax({
+        method: 'GET',
+        url: 'https://api.api-ninjas.com/v1/interestrate',
+        headers: { 'X-Api-Key': 'bqWH6covDtf0E84LhDpQqw==D0VqpsDFkGSWCC98'},
+        contentType: 'application/json',
+        success: function(result) {
+            console.log(result);
+        },
+        error: function ajaxError(jqXHR) {
+            console.error('Error: ', jqXHR.responseText);
+        }
+    });
 
 }
 
