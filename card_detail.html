@@ -18,6 +18,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+    <link rel="stylesheet" href="./styles/card_detail.css">
 </head>
 
 <body>
@@ -51,7 +53,8 @@
             <div>
                 <div class="row mx-1 bg-secondary bg-gradient bg-opacity-10">
                     <h3>Summary</h3>
-                    <p id="summary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, eaque. Consequuntur beatae
+                    <p id="summary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, eaque.
+                        Consequuntur beatae
                         laudantium consectetur! Autem hic saepe neque explicabo veniam dolore vitae, reprehenderit
                         laboriosam quos repudiandae excepturi distinctio incidunt ad?</p>
                 </div>
@@ -74,14 +77,43 @@
                 </div>
                 <div class="row mx-1 my-2">
                     <div>Rewards:</div>
-                    <div class="mx-1"><p class="m-0" id="reward"> Description here. BalaBalaBala.</p></div>
+                    <div class="mx-1">
+                        <p class="m-0" id="reward"> Description here. BalaBalaBala.</p>
+                    </div>
                 </div>
                 <div class="row mx-1 my-2">
                     <p class="m-0">Benefit:</p>
-                    <div class="mx-1"><p class="m-0" id="benefit"> Description here. BalaBalaBala.</p></div>
+                    <div class="mx-1">
+                        <p class="m-0" id="benefit"> Description here. BalaBalaBala.</p>
+                    </div>
                 </div>
-            </div>
-        </div>
+                <div class="row mx-1 bg-secondary bg-gradient bg-opacity-10">
+                    <h3>Write a Review</h3>
+                    <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Please share your thoughts about this credit
+                            card:</label>
+                        <textarea class="form-control" id="description" rows="3"></textarea>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="d-flex justify-content-end" style="padding-bottom: 70px; padding-top: 5px;">
+                        <button type="button" class="btn btn-lg btn-primary pull-right"
+                            onclick="writeReview()">Submit</button>
+                    </div>
+                </div>
     </main>
     <nav id="footerPlaceholder"></nav>
 
