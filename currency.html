@@ -31,21 +31,22 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
 
-    <div class="input-group input-group-lg mx-auto" style="width:98% ;">
-        <span class="input-group-text" id="inputGroup-sizing-lg">From</span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-lg" placeholder="Check the currency code below" id="fromCurrency">
+    <div>
+        <form class="form-floating">
+            <input type="email" class="form-control" id="fromCurrency" value="CAD">
+            <label for="fromCurrency">Convert From</label>
+          </form>
+        <form class="form-floating">
+            <input type="email" class="form-control" id="toCurrency" value="CNY">
+            <label for="toCurrency">Convert to</label>
+          </form>
+        <form class="form-floating">
+            <input type="email" class="form-control" id="amount" value="2000" >
+            <label for="amount">Amount</label>
+          </form>
+        
     </div>
-    <div class="input-group input-group-lg mx-auto" style="width:98% ;">
-        <span class="input-group-text" id="inputGroup-sizing-lg">To</span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-lg" placeholder="Check the currency code below" id="toCurrency">
-    </div>
-    <div class="input-group input-group-lg mx-auto" style="width:98% ;">
-        <span class="input-group-text" id="inputGroup-sizing-lg">Amount</span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-lg" placeholder="$" id="amount">
-    </div>
+
     <div class="inline-flex">
         <div><h3 id="result"></h3></div>
         <button type="button" class="btn btn-primary" id="convert">Convert</button>
@@ -53,7 +54,7 @@
 
 
     <!-- --------------------available currencies table-------------------------- -->
-    <hr>
+    <div my-5><p> </p></div>
     <div id="currenciesTable">
         <table class="table">
             <thead class="bg-secondary bg-gradient bg-opacity-50">
