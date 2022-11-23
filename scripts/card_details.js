@@ -3,7 +3,7 @@ back_handler = ()=>{
     window.history.back();
 }
 
-//get the name of hike
+
 db.collection('credit_card').where('code', '==', cardID)
     .get().then(card => {
         let thisCard = card.docs[0].data()
