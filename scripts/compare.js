@@ -1,11 +1,8 @@
-// cardName = thisCard.name
-// annual_fee = thisCard.annual_fee
-// summary = thisCard.description
-// interest_rate = thisCard.interest_rate
-// welcome_bonus = thisCard.welcome_bonus
-// extra_fee = thisCard.extra_fee
-// reward = thisCard.reward
-// benefit = thisCard.benefit
+back_handler = ()=>{
+    window.history.back();
+}
+
+document.getElementById('back_btn').onclick = back_handler
 
 $('#cardtype1').change(()=>{
     console.log( $("#cardtype1 option:selected").val());
