@@ -15,7 +15,14 @@ function displayTips(collection) {
         })
 }
 
-displayTips("tips");
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        displayTips("tips");
+    } else {
+        alert("Please Log In to process the page.");
+    }
+  });
+
 
 
 

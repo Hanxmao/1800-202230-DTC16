@@ -180,4 +180,11 @@ function displayCards(collection) {
         })
 }
 
-displayCards("credit_card")
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        displayCards("credit_card")
+    } else {
+        alert("Please Log In to process the page.");
+    }
+  });
