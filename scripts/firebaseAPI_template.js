@@ -16,3 +16,6 @@ var firebaseConfig = {
 //--------------------------------------------
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+
+
+signOut= ()=>{firebase.auth().signOut()}

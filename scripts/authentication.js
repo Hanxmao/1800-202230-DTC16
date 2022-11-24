@@ -1,6 +1,5 @@
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
-signOut= ()=>{firebase.auth().signOut()}
 
 var uiConfig = {
     callbacks: {

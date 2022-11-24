@@ -15,3 +15,5 @@
 //     hamburger.classList.remove("active");
 //     navMenu.classList.remove("active");
 // }))
+
+signOut= ()=>{firebase.auth().signOut()}
