@@ -1,15 +1,19 @@
 let urlParams = new URLSearchParams(window.location.search)
-annual_fee = urlParams.get("annual_fee")
-extra_fee = urlParams.get("extra_fee")
-welcome_bonus = urlParams.get("welcome_bonus")
+annual_fee = Number(urlParams.get("annual_fee"))
+extra_fee = Number(urlParams.get("extra_fee"))
+welcome_bonus = Number(urlParams.get("welcome_bonus"))
+console.log(annual_fee);
 travel = urlParams.get("travel")
 role = urlParams.get("role")
-console.log(role);
 type = urlParams.get("type")
+
+function setCardData(id) {
+    localStorage.setItem('cardID', id);
+}
 
 function displayCards(collection) {
     if(role != "none"){
-        db.collection(collection).where("category", "==", role).limit(1).get()
+        db.collection(collection).where("category", "==", role).limit(2).get()
         .then(snap => {
             snap.forEach(doc => {
                 var title = doc.data().name;
@@ -37,7 +41,7 @@ function displayCards(collection) {
         })
     }
     if (type != "none") {
-        db.collection(collection).where("category", "==", type).limit(1).get()
+        db.collection(collection).where("category", "==", type).limit(2).get()
             .then(snap => {
                 snap.forEach(doc => {
                     var title = doc.data().name;
@@ -67,7 +71,7 @@ function displayCards(collection) {
     }
 
     if (travel == "true") {
-        db.collection(collection).where("category", "==", "travel").limit(1).get()
+        db.collection(collection).where("category", "==", "travel").limit(2).get()
             .then(snap => {
                 snap.forEach(doc => {
                     var title = doc.data().name;
@@ -96,7 +100,7 @@ function displayCards(collection) {
 
     }
 
-    db.collection(collection).where("annual_fee", "<", annual_fee).limit(1).get()
+    db.collection(collection).where("annual_fee", "<", annual_fee).orderBy("annual_fee").limit(2).get()
         .then(snap => {
             snap.forEach(doc => {
                 var title = doc.data().name;
@@ -122,7 +126,7 @@ function displayCards(collection) {
 
             })
         })
-    db.collection(collection).where("extra_fee", "<", extra_fee).limit(1).get()
+    db.collection(collection).where("extra_fee", "<", extra_fee).orderBy("extra_fee").limit(2).get()
         .then(snap => {
             snap.forEach(doc => {
                 var title = doc.data().name;
@@ -148,7 +152,7 @@ function displayCards(collection) {
 
             })
         })
-    db.collection(collection).where("welcome_bonus", ">", welcome_bonus+1).limit(1).get()
+    db.collection(collection).where("welcome_bonus", ">=", welcome_bonus).orderBy("welcome_bonus", "desc").limit(2).get()
         .then(snap => {
             snap.forEach(doc => {
                 var title = doc.data().name;

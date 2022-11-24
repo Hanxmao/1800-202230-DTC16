@@ -1,3 +1,9 @@
+let annual_fee = $("#annual_fee").val()
+let extra_fee = $("#extra_fee").val()
+let welcome_bonus = $("#welcome_bonus").val()
+
+
+
 $(document).on('input', '#annual_fee', function() {
     $('#annual_output').html( $(this).val());
     annual_fee = $(this).val()

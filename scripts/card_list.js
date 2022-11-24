@@ -179,8 +179,13 @@ function displayCards(collection) {
 
 
 }
-
-displayCards("credit_card");
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        displayCards("credit_card");
+    } else {
+        alert("Please Log In to process the page.");
+    }
+  });
 
 
 
@@ -196,11 +201,11 @@ displayCards("credit_card");
                 category: "travel",
                 bank: "RBC",
                 description: "5x points on travel purchased through this card, excluding hotel purchases that qualify for the $50 Annual Ultimate Rewards Hotel Credit. 3x points on select streaming services and online grocery purchases",
-                interest_rate: "16.99%",
+                interest_rate: 16.99,
                 reward: "1 point per $1 spent on all other purchases \n2x points on all other travel",
-                annual_fee: "$120",
-                welcome_bonus: "$0",
-                extra_fee: "$25",
+                annual_fee: 120,
+                welcome_bonus: 100,
+                extra_fee: 25,
                 benefit: "Earn 60,000 Bonus Points after you spend $4,000 on purchases in the first 3 months from account opening.",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -210,11 +215,11 @@ displayCards("credit_card");
                 category: "cash_back",
                 bank: "RBC",
                 description: "Get Unlimited Cash Back on Your Purchases, plus your rewards accumulate automatically, so tracking is hassle-free. Link your card and instantly save 3¢/L on fuel and always earn 20% more Petro-Points at Petro-Canada. Get $0 delivery fees for 12 months from DoorDash",
-                interest_rate: "29.99%",
+                interest_rate: 29.99,
                 reward: "Earn up to 1.5% cash back on your spending",
-                annual_fee: "$99",
-                welcome_bonus: "$25",
-                extra_fee: "$50",
+                annual_fee: 99,
+                welcome_bonus: 25,
+                extra_fee: 50,
                 benefit: "Add-on Travel Insurance.\nRBC Road Assist.\nBalanceProtector Max Insurance.\nIdentity Theft & Credit Protection",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -224,11 +229,11 @@ displayCards("credit_card");
                 category: "low_interest",
                 bank: "RBC",
                 description: "If you choose to carry a balance on your card, the low 12.99% interest rate – on purchases and cash advances - lets you save on interest. Load personalized offers for great brands before you shop to get cash savings or to earn bonus points faster.",
-                interest_rate: "12.99%",
+                interest_rate: 12.99,
                 reward: "N/A",
-                annual_fee: "$20",
-                welcome_bonus: "$0",
-                extra_fee: "$0",
+                annual_fee: 20,
+                welcome_bonus: 0,
+                extra_fee: 0,
                 benefit: "Instant Fuel Savings at Petro-Canada.\nEarn more Be Well points at Rexall.\nGet $0 delivery fees for 3 months from DoorDash",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -238,11 +243,11 @@ displayCards("credit_card");
                 category: "student",
                 bank: "RBC",
                 description: "Enjoy 6,000 points upon approval. Pay With Points Redeem your Avion points to pay bills, your credit card balance or even send money to friends with Interac e-Transfer. Minimum redemption is only $10, so you can use your points where you need them most.",
-                interest_rate: "19.99%",
+                interest_rate: 19.99,
                 reward: "Earn 1.5X points for every $1 spent on groceries, rides, gas, streaming, subscriptions, digital gaming and more.",
-                annual_fee: "$0",
-                welcome_bonus: "$50",
-                extra_fee: "$0",
+                annual_fee: 0,
+                welcome_bonus: 50,
+                extra_fee: 0,
                 benefit: "No annual fee. Purchase Security and Extended Warranty Insurance",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -252,11 +257,11 @@ displayCards("credit_card");
                 category: "business",
                 bank: "RBC",
                 description: "The benefits of a premium rewards program that gives your business the flexibility to redeem for travel as well as merchandise, gift cards or to pay back with points. A built-in suite of premium insurance coverage. Less than 5 cards in their expense program. To simplify accounting, employee reimbursement, and identify tax-deductible expenses",
-                interest_rate: "19.99%",
+                interest_rate: 13.99,
                 reward: "Earn 1 point for every $1 spent in net purchases with your card",
-                annual_fee: "$120",
-                welcome_bonus: "N/A",
-                extra_fee: "$25",
+                annual_fee: 150,
+                welcome_bonus: 0,
+                extra_fee: 25,
                 benefit: "Combine the Avion points earned from all your employees' Business Platinum cards into one account, and pool your points between your business and personal Avion cards",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -266,11 +271,11 @@ displayCards("credit_card");
                 category: "travel",
                 bank: "TD",
                 description: "5x points on travel purchased through this card, excluding hotel purchases that qualify for the $50 Annual Ultimate Rewards Hotel Credit. 3x points on select streaming services and online grocery purchases",
-                interest_rate: "16.99%",
+                interest_rate: 16.99,
                 reward: "1 point per $1 spent on all other purchases \n2x points on all other travel",
-                annual_fee: "$120",
-                welcome_bonus: "$0",
-                extra_fee: "$25",
+                annual_fee: 120,
+                welcome_bonus: 0,
+                extra_fee: 25,
                 benefit: "Earn 60,000 Bonus Points after you spend $4,000 on purchases in the first 3 months from account opening.",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -280,11 +285,11 @@ displayCards("credit_card");
                 category: "cash_back",
                 bank: "TD",
                 description: "Get Unlimited Cash Back on Your Purchases, plus your rewards accumulate automatically, so tracking is hassle-free. Link your card and instantly save 3¢/L on fuel and always earn 20% more Petro-Points at Petro-Canada. Get $0 delivery fees for 12 months from DoorDash",
-                interest_rate: "29.99%",
+                interest_rate: 29.99,
                 reward: "Earn up to 1.5% cash back on your spending",
-                annual_fee: "$99",
-                welcome_bonus: "$25",
-                extra_fee: "$50",
+                annual_fee: 99,
+                welcome_bonus: 25,
+                extra_fee: 50,
                 benefit: "Add-on Travel Insurance.\nRBC Road Assist.\nBalanceProtector Max Insurance.\nIdentity Theft & Credit Protection",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -294,11 +299,11 @@ displayCards("credit_card");
                 category: "low_interest",
                 bank: "TD",
                 description: "If you choose to carry a balance on your card, the low 12.99% interest rate – on purchases and cash advances - lets you save on interest. Load personalized offers for great brands before you shop to get cash savings or to earn bonus points faster.",
-                interest_rate: "12.99%",
+                interest_rate: 12.99,
                 reward: "N/A",
-                annual_fee: "$20",
-                welcome_bonus: "$0",
-                extra_fee: "$0",
+                annual_fee: 20,
+                welcome_bonus: 0,
+                extra_fee: 0,
                 benefit: "Instant Fuel Savings at Petro-Canada.\nEarn more Be Well points at Rexall.\nGet $0 delivery fees for 3 months from DoorDash",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -308,11 +313,11 @@ displayCards("credit_card");
                 category: "student",
                 bank: "TD",
                 description: "Enjoy 6,000 points upon approval. Pay With Points Redeem your Avion points to pay bills, your credit card balance or even send money to friends with Interac e-Transfer. Minimum redemption is only $10, so you can use your points where you need them most.",
-                interest_rate: "19.99%",
+                interest_rate: 19.99,
                 reward: "Earn 1.5X points for every $1 spent on groceries, rides, gas, streaming, subscriptions, digital gaming and more.",
-                annual_fee: "$0",
-                welcome_bonus: "$50",
-                extra_fee: "$0",
+                annual_fee: 0,
+                welcome_bonus: 50,
+                extra_fee: 0,
                 benefit: "No annual fee. Purchase Security and Extended Warranty Insurance",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -322,11 +327,11 @@ displayCards("credit_card");
                 category: "business",
                 bank: "TD",
                 description: "The benefits of a premium rewards program that gives your business the flexibility to redeem for travel as well as merchandise, gift cards or to pay back with points. A built-in suite of premium insurance coverage. Less than 5 cards in their expense program. To simplify accounting, employee reimbursement, and identify tax-deductible expenses",
-                interest_rate: "19.99%",
+                interest_rate: 19.99,
                 reward: "Earn 1 point for every $1 spent in net purchases with your card",
-                annual_fee: "$120",
-                welcome_bonus: "N/A",
-                extra_fee: "$25",
+                annual_fee: 120,
+                welcome_bonus: 0,
+                extra_fee: 25,
                 benefit: "Combine the Avion points earned from all your employees' Business Platinum cards into one account, and pool your points between your business and personal Avion cards",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -336,11 +341,11 @@ displayCards("credit_card");
                 category: "travel",
                 bank: "BMO",
                 description: "5x points on travel purchased through this card, excluding hotel purchases that qualify for the $50 Annual Ultimate Rewards Hotel Credit. 3x points on select streaming services and online grocery purchases",
-                interest_rate: "16.99%",
+                interest_rate: 16.99,
                 reward: "1 point per $1 spent on all other purchases \n2x points on all other travel",
-                annual_fee: "$120",
-                welcome_bonus: "$0",
-                extra_fee: "$25",
+                annual_fee: 120,
+                welcome_bonus: 0,
+                extra_fee: 25,
                 benefit: "Earn 60,000 Bonus Points after you spend $4,000 on purchases in the first 3 months from account opening.",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -350,11 +355,11 @@ displayCards("credit_card");
                 category: "cash_back",
                 bank: "BMO",
                 description: "Get Unlimited Cash Back on Your Purchases, plus your rewards accumulate automatically, so tracking is hassle-free. Link your card and instantly save 3¢/L on fuel and always earn 20% more Petro-Points at Petro-Canada. Get $0 delivery fees for 12 months from DoorDash",
-                interest_rate: "29.99%",
+                interest_rate: 29.99,
                 reward: "Earn up to 1.5% cash back on your spending",
-                annual_fee: "$99",
-                welcome_bonus: "$25",
-                extra_fee: "$50",
+                annual_fee: 99,
+                welcome_bonus: 25,
+                extra_fee: 50,
                 benefit: "Add-on Travel Insurance.\nRBC Road Assist.\nBalanceProtector Max Insurance.\nIdentity Theft & Credit Protection",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -364,11 +369,11 @@ displayCards("credit_card");
                 category: "low_interest",
                 bank: "BMO",
                 description: "If you choose to carry a balance on your card, the low 12.99% interest rate – on purchases and cash advances - lets you save on interest. Load personalized offers for great brands before you shop to get cash savings or to earn bonus points faster.",
-                interest_rate: "12.99%",
+                interest_rate: 12.99,
                 reward: "N/A",
-                annual_fee: "$20",
-                welcome_bonus: "$0",
-                extra_fee: "$0",
+                annual_fee: 20,
+                welcome_bonus: 0,
+                extra_fee: 0,
                 benefit: "Instant Fuel Savings at Petro-Canada.\nEarn more Be Well points at Rexall.\nGet $0 delivery fees for 3 months from DoorDash",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -378,11 +383,11 @@ displayCards("credit_card");
                 category: "student",
                 bank: "BMO",
                 description: "Enjoy 6,000 points upon approval. Pay With Points Redeem your Avion points to pay bills, your credit card balance or even send money to friends with Interac e-Transfer. Minimum redemption is only $10, so you can use your points where you need them most.",
-                interest_rate: "19.99%",
+                interest_rate: 19.99,
                 reward: "Earn 1.5X points for every $1 spent on groceries, rides, gas, streaming, subscriptions, digital gaming and more.",
-                annual_fee: "$0",
-                welcome_bonus: "$50",
-                extra_fee: "$0",
+                annual_fee: 0,
+                welcome_bonus: 50,
+                extra_fee: 0,
                 benefit: "No annual fee. Purchase Security and Extended Warranty Insurance",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -392,11 +397,11 @@ displayCards("credit_card");
                 category: "business",
                 bank: "BMO",
                 description: "The benefits of a premium rewards program that gives your business the flexibility to redeem for travel as well as merchandise, gift cards or to pay back with points. A built-in suite of premium insurance coverage. Less than 5 cards in their expense program. To simplify accounting, employee reimbursement, and identify tax-deductible expenses",
-                interest_rate: "19.99%",
+                interest_rate: 19.99,
                 reward: "Earn 1 point for every $1 spent in net purchases with your card",
-                annual_fee: "$120",
-                welcome_bonus: "N/A",
-                extra_fee: "$25",
+                annual_fee: 120,
+                welcome_bonus: 0,
+                extra_fee: 25,
                 benefit: "Combine the Avion points earned from all your employees' Business Platinum cards into one account, and pool your points between your business and personal Avion cards",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -406,11 +411,11 @@ displayCards("credit_card");
                 category: "travel",
                 bank: "SC",
                 description: "5x points on travel purchased through this card, excluding hotel purchases that qualify for the $50 Annual Ultimate Rewards Hotel Credit. 3x points on select streaming services and online grocery purchases",
-                interest_rate: "16.99%",
+                interest_rate: 16.99,
                 reward: "1 point per $1 spent on all other purchases \n2x points on all other travel",
-                annual_fee: "$120",
-                welcome_bonus: "$0",
-                extra_fee: "$25",
+                annual_fee: 120,
+                welcome_bonus: 0,
+                extra_fee: 25,
                 benefit: "Earn 60,000 Bonus Points after you spend $4,000 on purchases in the first 3 months from account opening.",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -420,11 +425,11 @@ displayCards("credit_card");
                 category: "cash_back",
                 bank: "SC",
                 description: "Get Unlimited Cash Back on Your Purchases, plus your rewards accumulate automatically, so tracking is hassle-free. Link your card and instantly save 3¢/L on fuel and always earn 20% more Petro-Points at Petro-Canada. Get $0 delivery fees for 12 months from DoorDash",
-                interest_rate: "29.99%",
+                interest_rate: 29.99,
                 reward: "Earn up to 1.5% cash back on your spending",
-                annual_fee: "$99",
-                welcome_bonus: "$25",
-                extra_fee: "$50",
+                annual_fee: 99,
+                welcome_bonus: 25,
+                extra_fee: 50,
                 benefit: "Add-on Travel Insurance.\nRBC Road Assist.\nBalanceProtector Max Insurance.\nIdentity Theft & Credit Protection",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -434,11 +439,11 @@ displayCards("credit_card");
                 category: "low_interest",
                 bank: "SC",
                 description: "If you choose to carry a balance on your card, the low 12.99% interest rate – on purchases and cash advances - lets you save on interest. Load personalized offers for great brands before you shop to get cash savings or to earn bonus points faster.",
-                interest_rate: "12.99%",
+                interest_rate: 12.99,
                 reward: "N/A",
-                annual_fee: "$20",
-                welcome_bonus: "$0",
-                extra_fee: "$0",
+                annual_fee: 20,
+                welcome_bonus: 0,
+                extra_fee: 0,
                 benefit: "Instant Fuel Savings at Petro-Canada.\nEarn more Be Well points at Rexall.\nGet $0 delivery fees for 3 months from DoorDash",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -448,11 +453,11 @@ displayCards("credit_card");
                 category: "student",
                 bank: "SC",
                 description: "Enjoy 6,000 points upon approval. Pay With Points Redeem your Avion points to pay bills, your credit card balance or even send money to friends with Interac e-Transfer. Minimum redemption is only $10, so you can use your points where you need them most.",
-                interest_rate: "19.99%",
+                interest_rate: 19.99,
                 reward: "Earn 1.5X points for every $1 spent on groceries, rides, gas, streaming, subscriptions, digital gaming and more.",
-                annual_fee: "$0",
-                welcome_bonus: "$50",
-                extra_fee: "$0",
+                annual_fee: 0,
+                welcome_bonus: 50,
+                extra_fee: 0,
                 benefit: "No annual fee. Purchase Security and Extended Warranty Insurance",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -462,11 +467,11 @@ displayCards("credit_card");
                 category: "business",
                 bank: "SC",
                 description: "The benefits of a premium rewards program that gives your business the flexibility to redeem for travel as well as merchandise, gift cards or to pay back with points. A built-in suite of premium insurance coverage. Less than 5 cards in their expense program. To simplify accounting, employee reimbursement, and identify tax-deductible expenses",
-                interest_rate: "19.99%",
+                interest_rate: 18.99,
                 reward: "Earn 1 point for every $1 spent in net purchases with your card",
-                annual_fee: "$120",
-                welcome_bonus: "N/A",
-                extra_fee: "$25",
+                annual_fee: 99,
+                welcome_bonus: 99,
+                extra_fee: 25,
                 benefit: "Combine the Avion points earned from all your employees' Business Platinum cards into one account, and pool your points between your business and personal Avion cards",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -476,11 +481,11 @@ displayCards("credit_card");
                 category: "travel",
                 bank: "CIB",
                 description: "5x points on travel purchased through this card, excluding hotel purchases that qualify for the $50 Annual Ultimate Rewards Hotel Credit. 3x points on select streaming services and online grocery purchases",
-                interest_rate: "16.99%",
+                interest_rate: 15.99,
                 reward: "1 point per $1 spent on all other purchases \n2x points on all other travel",
-                annual_fee: "$120",
-                welcome_bonus: "$0",
-                extra_fee: "$25",
+                annual_fee: 110,
+                welcome_bonus: 0,
+                extra_fee: 25,
                 benefit: "Earn 60,000 Bonus Points after you spend $4,000 on purchases in the first 3 months from account opening.",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -490,11 +495,11 @@ displayCards("credit_card");
                 category: "cash_back",
                 bank: "CIB",
                 description: "Get Unlimited Cash Back on Your Purchases, plus your rewards accumulate automatically, so tracking is hassle-free. Link your card and instantly save 3¢/L on fuel and always earn 20% more Petro-Points at Petro-Canada. Get $0 delivery fees for 12 months from DoorDash",
-                interest_rate: "29.99%",
+                interest_rate: 28.99,
                 reward: "Earn up to 1.5% cash back on your spending",
-                annual_fee: "$99",
-                welcome_bonus: "$25",
-                extra_fee: "$50",
+                annual_fee: 89,
+                welcome_bonus: 25,
+                extra_fee: 50,
                 benefit: "Add-on Travel Insurance.\nRBC Road Assist.\nBalanceProtector Max Insurance.\nIdentity Theft & Credit Protection",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -504,11 +509,11 @@ displayCards("credit_card");
                 category: "low_interest",
                 bank: "CIB",
                 description: "If you choose to carry a balance on your card, the low 12.99% interest rate – on purchases and cash advances - lets you save on interest. Load personalized offers for great brands before you shop to get cash savings or to earn bonus points faster.",
-                interest_rate: "12.99%",
+                interest_rate: 13.99,
                 reward: "N/A",
-                annual_fee: "$20",
-                welcome_bonus: "$0",
-                extra_fee: "$0",
+                annual_fee: 200,
+                welcome_bonus: 10,
+                extra_fee:10,
                 benefit: "Instant Fuel Savings at Petro-Canada.\nEarn more Be Well points at Rexall.\nGet $0 delivery fees for 3 months from DoorDash",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -518,11 +523,11 @@ displayCards("credit_card");
                 category: "student",
                 bank: "CIB",
                 description: "Enjoy 6,000 points upon approval. Pay With Points Redeem your Avion points to pay bills, your credit card balance or even send money to friends with Interac e-Transfer. Minimum redemption is only $10, so you can use your points where you need them most.",
-                interest_rate: "19.99%",
+                interest_rate: 19.99,
                 reward: "Earn 1.5X points for every $1 spent on groceries, rides, gas, streaming, subscriptions, digital gaming and more.",
-                annual_fee: "$0",
-                welcome_bonus: "$50",
-                extra_fee: "$0",
+                annual_fee: 20,
+                welcome_bonus: 250,
+                extra_fee: 0,
                 benefit: "No annual fee. Purchase Security and Extended Warranty Insurance",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
@@ -532,11 +537,11 @@ displayCards("credit_card");
                 category: "business",
                 bank: "CIB",
                 description: "The benefits of a premium rewards program that gives your business the flexibility to redeem for travel as well as merchandise, gift cards or to pay back with points. A built-in suite of premium insurance coverage. Less than 5 cards in their expense program. To simplify accounting, employee reimbursement, and identify tax-deductible expenses",
-                interest_rate: "19.99%",
+                interest_rate: 18.99,
                 reward: "Earn 1 point for every $1 spent in net purchases with your card",
-                annual_fee: "$120",
-                welcome_bonus: "N/A",
-                extra_fee: "$25",
+                annual_fee: 100,
+                welcome_bonus: 10,
+                extra_fee: 50,
                 benefit: "Combine the Avion points earned from all your employees' Business Platinum cards into one account, and pool your points between your business and personal Avion cards",
                 last_updated: firebase.firestore.FieldValue.serverTimestamp()
             });
