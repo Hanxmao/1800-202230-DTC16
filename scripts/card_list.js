@@ -1,9 +1,13 @@
 let urlParams = new URLSearchParams(window.location.search)
 let currentUser
+let saved_cards
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         currentUser = db.collection("users").doc(user.uid)
+        currentUser.get().then(userDoc => {
+            saved_cards = userDoc.data().saved_cards;
+            console.log(saved_cards);})
         displayCards("credit_card");
     } else {
         alert("Please Log In to process the page.");
@@ -11,7 +15,6 @@ firebase.auth().onAuthStateChanged((user) => {
   });
 
 function saveCard(id){
-// console.log('icon click');
     currentUser.set({
         saved_cards: firebase.firestore.FieldValue.arrayUnion(id)
     },{
@@ -39,6 +42,11 @@ function displayCards(collection) {
                 let randReview = Math.floor(Math.random() * 120)
                 let randRating = Math.ceil(Math.random() * 5)
                 console.log(cardID)
+
+                if (saved_cards.includes(cardID)){
+                    console.log("in");
+                    newcard.querySelector('#save').innerHTML = "Saved"
+                }
 
                 newcard.querySelector('#rating').innerHTML = randRating;
                 newcard.querySelector('#review').innerHTML = randReview;
@@ -68,6 +76,11 @@ function displayCards(collection) {
                 let randReview = Math.floor(Math.random() * 120)
                 let randRating = Math.ceil(Math.random() * 5)
                 console.log(cardID)
+
+                if (saved_cards.includes(cardID)){
+                    console.log("in");
+                    newcard.querySelector('#save').innerHTML = "Saved"
+                }
     
                 newcard.querySelector('#rating').innerHTML = randRating;
                 newcard.querySelector('#review').innerHTML = randReview;

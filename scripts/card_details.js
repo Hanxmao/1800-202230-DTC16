@@ -1,14 +1,37 @@
 let cardID = localStorage.getItem("cardID");
+let currentUser
+let saved_cards
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        let cardID = localStorage.getItem("cardID");
-        back_handler = () => {
-            window.history.back();
-        }
+        currentUser = db.collection("users").doc(user.uid)
+        currentUser.get().then(userDoc => {
+            saved_cards = userDoc.data().saved_cards;
+            console.log(saved_cards);})
+        displayCard()
+
+    } else {
+        alert("Please Log In to process the page.");
+    }
+});
 
 
-        db.collection('credit_card').where('code', '==', cardID)
+
+back_handler = () => {
+    window.history.back();
+}
+
+function saveCard(id){
+    currentUser.set({
+        saved_cards: firebase.firestore.FieldValue.arrayUnion(id)
+    },{
+        merge:true
+    })
+}
+
+
+function displayCard(){
+    db.collection('credit_card').where('code', '==', cardID)
             .get().then(card => {
                 let thisCard = card.docs[0].data()
                 cardName = thisCard.name
@@ -19,7 +42,12 @@ firebase.auth().onAuthStateChanged((user) => {
                 extra_fee = thisCard.extra_fee
                 reward = thisCard.reward
                 benefit = thisCard.benefit
+                cardID = thisCard.code
 
+                if (saved_cards.includes(cardID)){
+                    console.log("in");
+                    document.getElementById('save').innerHTML = "Saved"
+                }
 
                 document.getElementById('cardName').innerHTML = cardName
                 document.getElementById('annual_fee').innerHTML = `Annual fees: ${annual_fee}`
@@ -31,13 +59,10 @@ firebase.auth().onAuthStateChanged((user) => {
                 document.getElementById('benefit').innerHTML = benefit
                 document.getElementById('card_img').src = `../images/card_img${cardID[cardID.length - 1]}.svg`
                 document.getElementById('back_btn').onclick = back_handler
+                document.getElementById('save').onclick = () => saveCard(cardID)
 
             })
-    } else {
-        alert("Please Log In to process the page.");
-    }
-});
-
+}
 
 function writeReview() {
 
