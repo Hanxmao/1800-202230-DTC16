@@ -59,7 +59,7 @@ function writeReview() {
                         rating: Rating,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(() => {
-                        window.location.href = "thanks.html"; //new line added
+                        window.location.href = "card_detail.html"; //new line added
                     })
                 })
         } else {

@@ -1,8 +1,28 @@
+let urlParams = new URLSearchParams(window.location.search)
+let currentUser
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        currentUser = db.collection("users").doc(user.uid)
+        displayCards("credit_card");
+    } else {
+        alert("Please Log In to process the page.");
+    }
+  });
+
+  function saveCard(id){
+    // console.log('icon click');
+    currentUser.set({
+        saved_cards: firebase.firestore.FieldValue.arrayUnion(id)
+    },{
+        merge:true
+    })
+}
+
 function setCardData(id) {
     localStorage.setItem('cardID', id);
 }
 
-let urlParams = new URLSearchParams(window.location.search)
 
 function displayCards(collection) {
     let cardTemplate = document.getElementById("cardTemplate");
@@ -29,6 +49,7 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
+                newcard.querySelector('#save').onclick = () => saveCard(cardID)
 
 
                 document.getElementById("eachCard").appendChild(newcard);
@@ -57,6 +78,7 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
+                newcard.querySelector('#save').onclick = () => saveCard(cardID)
 
 
                 document.getElementById("eachCard").appendChild(newcard);
@@ -85,6 +107,7 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
+                newcard.querySelector('#save').onclick = () => saveCard(cardID)
 
 
                 document.getElementById("eachCard").appendChild(newcard);
@@ -113,6 +136,7 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
+                newcard.querySelector('#save').onclick = () => saveCard(cardID)
 
 
                 document.getElementById("eachCard").appendChild(newcard);
@@ -141,7 +165,7 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
-
+                newcard.querySelector('#save').onclick = () => saveCard(cardID)
 
                 document.getElementById("eachCard").appendChild(newcard);
 
@@ -169,6 +193,7 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
+                newcard.querySelector('#save').onclick = () => saveCard(cardID)
     
     
                 document.getElementById("eachCard").appendChild(newcard);
@@ -179,13 +204,6 @@ function displayCards(collection) {
 
 
 }
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        displayCards("credit_card");
-    } else {
-        alert("Please Log In to process the page.");
-    }
-  });
 
 
 
