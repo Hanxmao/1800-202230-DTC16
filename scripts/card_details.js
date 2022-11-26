@@ -12,6 +12,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
     } else {
         alert("Please Log In to process the page.");
+        window.location.href = 'login.html'
     }
 });
 

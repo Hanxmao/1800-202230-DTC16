@@ -2,7 +2,7 @@ firebase.auth().onAuthStateChanged(user => {
     if (user) {
         getSaved(user)
     } else {
-        alert("Please login!");
+        alert("Please Log In to process the page.");
         window.location.href = 'login.html'
     }
 });
