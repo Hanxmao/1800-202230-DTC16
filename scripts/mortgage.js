@@ -1,10 +1,6 @@
-
-
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-
-
-        setup = () => {
+setup = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
             $("#convert").click(() => {
                 let home_value = $('#home_value').val()
                 let downpayment = $("#downpayment").val()
@@ -24,12 +20,15 @@ firebase.auth().onAuthStateChanged((user) => {
                     }
                 });
             })
-
-
+        } else {
+            alert("Please Log In to process the page.");
         }
-    } else {
-        alert("Please Log In to process the page.");
-    }
-});
+    });
+ 
+
+
+}
+
+
 
 $(document).ready(setup)
