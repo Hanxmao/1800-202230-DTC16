@@ -1,4 +1,4 @@
-
+let cardID = localStorage.getItem("cardID");
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -37,3 +37,33 @@ firebase.auth().onAuthStateChanged((user) => {
         alert("Please Log In to process the page.");
     }
 });
+
+
+function writeReview() {
+
+    let Description = document.getElementById("description").value;
+
+    let Rating = document.querySelector('input[name="rate"]:checked').value;
+
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            var currentUser = db.collection("users").doc(user.uid)
+            var userID = user.uid;
+            //get the document for current user.
+            currentUser.get()
+                .then(userDoc => {
+                    db.collection("reviews").add({
+                        code: cardID,
+                        userID: userID,
+                        description: Description,
+                        rating: Rating,
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                    }).then(() => {
+                        window.location.href = "thanks.html"; //new line added
+                    })
+                })
+        } else {
+            // No user is signed in.
+        }
+    });
+}
