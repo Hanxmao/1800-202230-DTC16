@@ -1,14 +1,16 @@
 function insertName() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.log(user.uid);
-      console.log(user.displayName);
       user_Name = user.displayName;
       $("#name-goes-here").text(user_Name); //using jquery
     } else {
+      //alert user and redirect to login page if user is not login
+      alert("Please Log In to process the page.");
+      window.location.href = 'login.html'
     }
   });
 }
+
 insertName(); //run the function
 
 function writeHikes() {
@@ -22,13 +24,13 @@ function writeHikes() {
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   hikesRef.add({
-    name: "BMO Student-related make-up card", //replace with your own city?
+    name: "BMO Student-related make-up card",
     bank: "BMO",
     details: "Lorem Ipsum2",
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   hikesRef.add({
-    name: "TD Low Interest Make-up Card", //replace with your own city?
+    name: "TD Low Interest Make-up Card",
     bank: "TD",
     details: "Lorem Ipsum3",
     last_updated: firebase.firestore.Timestamp.fromDate(

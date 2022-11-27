@@ -5,6 +5,7 @@ firebase.auth().onAuthStateChanged(user => {
         currentUser = db.collection("users").doc(user.uid)
         getSaved(user)
     } else {
+        //alert user and redirect to login page if user is not login
         alert("Please Log In to process the page.");
         window.location.href = 'login.html'
     }
@@ -13,7 +14,6 @@ firebase.auth().onAuthStateChanged(user => {
 function setCardData(id) {
     localStorage.setItem('cardID', id);
 }
-
 
 function removeCard(code){
     currentUser.set({
@@ -29,8 +29,6 @@ function getSaved(user) {
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {
             var saved_cards = userDoc.data().saved_cards;
-            console.log(saved_cards);
-
             let cardTemplate = document.getElementById("cardTemplate");
             saved_cards.forEach(cardID => {
                 db.collection("credit_card").where("code", "==", cardID).get().then(snap => {
@@ -52,7 +50,9 @@ function getSaved(user) {
                             a.onclick = () => setCardData(code)
                         })
 
+                        //remove the card from the saved_card array once the user click the remove button
                         newcard.querySelector('#remove').onclick = () => removeCard(code)
+                        //prompt user "removed" once the card is removed
                         newcard.querySelector('#inform').id = `inform${code}`
             
             

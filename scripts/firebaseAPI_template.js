@@ -17,5 +17,5 @@ var firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-
+// every page link this js file, so user can call signOut function in anywhere whithin the website
 signOut= ()=>{firebase.auth().signOut()}

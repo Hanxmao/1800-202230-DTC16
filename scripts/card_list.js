@@ -9,13 +9,18 @@ firebase.auth().onAuthStateChanged((user) => {
         currentUser = db.collection("users").doc(user.uid)
         currentUser.get().then(userDoc => {
             saved_cards = userDoc.data().saved_cards;
-            console.log(saved_cards);})
+        })
         displayCards("credit_card");
     } else {
+        //alert user and redirect to login page if user is not login
         alert("Please Log In to process the page.");
         window.location.href = 'login.html'
     }
   });
+  
+  function setCardData(id) {
+      localStorage.setItem('cardID', id);
+  }
 
 function saveCard(id){
     currentUser.set({
@@ -26,16 +31,11 @@ function saveCard(id){
     document.getElementById(`inform${id}`).innerHTML = "Saved"
 }
 
-
-function setCardData(id) {
-    localStorage.setItem('cardID', id);
-}
-
-
 function displayCards(collection) {
     let cardTemplate = document.getElementById("cardTemplate");
-    console.log(urlParams.get('type'));
     type = urlParams.get("type")
+    // if url params contain type, get the matched type cards from firebase
+    // else get all cards data from firebase
     if (type) {
         db.collection(collection).where("category", "==", type).get()
         .then(snap => {
@@ -45,10 +45,11 @@ function displayCards(collection) {
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
 
+                //if the card already saved by user, then change "save" to "saved" to prompt user
                 if (saved_cards.includes(cardID)){
-                    console.log("in");
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
+
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('#description').innerHTML = description;
                 newcard.querySelector('#card-img').src = `./images/card_img${cardID[cardID.length - 1]}.svg`;
@@ -73,8 +74,8 @@ function displayCards(collection) {
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
 
+                //if the card already saved by user, then change "save" to "saved" to prompt user
                 if (saved_cards.includes(cardID)){
-                    console.log("in");
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
     
@@ -102,7 +103,8 @@ function displayCards(collection) {
 
 
 
-// ---------------------------write data to firebase(done!!!!)----------------------
+// ---------------------------write data to firebase(Done!!!! Do not call again!)----------------------
+// 5 types of credit cards: Travel, Student, Business, low interest and Cash back
 function writeCards() {
     //create the credit card collection and the card document
     let cardsRef = db.collection("credit_card");

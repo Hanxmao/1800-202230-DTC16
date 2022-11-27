@@ -1,20 +1,20 @@
 let urlParams = new URLSearchParams(window.location.search)
-annual_fee = Number(urlParams.get("annual_fee"))
-extra_fee = Number(urlParams.get("extra_fee"))
-welcome_bonus = Number(urlParams.get("welcome_bonus"))
-console.log(annual_fee);
-travel = urlParams.get("travel")
-role = urlParams.get("role")
-type = urlParams.get("type")
+let annual_fee = Number(urlParams.get("annual_fee"))
+let extra_fee = Number(urlParams.get("extra_fee"))
+let welcome_bonus = Number(urlParams.get("welcome_bonus"))
+let travel = urlParams.get("travel")
+let role = urlParams.get("role")
+let type = urlParams.get("type")
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         currentUser = db.collection("users").doc(user.uid)
         currentUser.get().then(userDoc => {
             saved_cards = userDoc.data().saved_cards;
-            console.log(saved_cards);})
+        })
         displayCards("credit_card");
     } else {
+        //alert user and redirect to login page if user is not login
         alert("Please Log In to process the page.");
         window.location.href = 'login.html'
     }
@@ -42,20 +42,21 @@ function displayCards(collection) {
                 var description = doc.data().description;
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
-
+                
+                //if the card already saved by user, then change "save" to "saved" to prompt user
                 if (saved_cards.includes(cardID)){
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
+
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('#description').innerHTML = description;
                 newcard.querySelector('#card-img').src = `./images/card_img${cardID[cardID.length - 1]}.svg`;
                 all_links = newcard.querySelectorAll('a')
                 all_links.forEach((a) => {
-                    a.onclick = () => setCardData(cardID)
+                    a.onclick = () => setCardData(cardID)//call setCardData function to set cardID in local storage
                 })
                 newcard.querySelector('#inform').id = `inform${cardID}`
-                newcard.querySelector('#save').onclick = () => saveCard(cardID)
-
+                newcard.querySelector('#save').onclick = () => saveCard(cardID) //call saveCard to add the card code to saved_card array in current user document
 
                 document.getElementById("eachCard").appendChild(newcard);
             })

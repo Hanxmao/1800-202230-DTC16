@@ -8,13 +8,11 @@ firebase.auth().onAuthStateChanged((user) => {
         currentUser = db.collection("users").doc(user.uid)
         currentUser.get().then(userDoc => {
             saved_cards = userDoc.data().saved_cards;
-            console.log(saved_cards);})
-            
+        })
         displayReview()
         displayCard()
-   
-
     } else {
+        //alert user and redirect to login page if user is not login
         alert("Please Log In to process the page.");
         window.location.href = 'login.html'
     }
@@ -32,6 +30,7 @@ function saveCard(id){
     },{
         merge:true
     })
+    //Prompt user after they the card is saved to the saved_list
     document.getElementById(`inform`).innerHTML = "Saved"
 }
 
@@ -51,8 +50,8 @@ function displayCard(){
                 benefit = thisCard.benefit
                 code = thisCard.code
 
+                //if the card already saved by user, then change "save" to "saved" to prompt user
                 if (saved_cards.includes(code)){
-                    console.log("in");
                     document.getElementById('save').innerHTML = "Saved"
                 }
 
@@ -70,6 +69,7 @@ function displayCard(){
 
             })
 }
+
 
 function writeReview() {
 
@@ -93,20 +93,21 @@ function writeReview() {
                         name: userName,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(() => {
-                        window.location.href = "card_detail.html"; //new line added
+                        window.location.href = "card_detail.html"; 
                     })
                 })
         } else {
-            // No user is signed in.
+            alert("Please Log In to process the page.");
+            window.location.href = 'login.html'
         }
     });
 }
+
 
 displayReview = ()=>{
     let cardTemplate = document.getElementById("cardTemplate");
     db.collection('reviews').where('code', '==', cardID)
     .get().then(review => {
-        console.log(review.docs);
         for(i=0;i<review.docs.length;i++){
             user = review.docs[i].data().name
             description = review.docs[i].data().description
@@ -124,9 +125,6 @@ displayReview = ()=>{
             document.getElementById("forReview").appendChild(newcard);
             
         }
-        // review.docs.forEach((doc)=>{
-            
-        // })
     })
 }
 

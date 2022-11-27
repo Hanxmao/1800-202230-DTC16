@@ -1,11 +1,12 @@
 var currentUser
 
-
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         currentUser = db.collection("users").doc(user.uid)
+        // the populatedInfo function will check the values for each input, if it's not null then present the data that already exist in database
         populateInfo()
     } else {
+        //alert user and redirect to login page if user is not login
         alert("Please Log In to process the page.");
         window.location.href = 'login.html'
     }
@@ -50,7 +51,7 @@ function editUserInfo() {
     document.getElementById('personalInfoFields').disabled = false;
  }
 
-
+//will trigger once user click the "save" button, and grab the input values and update them to current user document in firebase
 function saveUserInfo(){
     userName = document.getElementById('name').value
     userCountry = document.getElementById('country').value
