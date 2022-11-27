@@ -1,7 +1,7 @@
 function displayTips(collection) {
     db.collection(collection).get()
         .then(snap => {
-            i = 1
+            i = 4
             snap.forEach(doc => { 
                 var title = doc.data().title;   
                 console.log(title);   

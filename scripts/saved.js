@@ -43,11 +43,7 @@ function getSaved(user) {
                         let description = doc.description;
                         let code = doc.code;
                         let newcard = cardTemplate.content.cloneNode(true);
-                        let randReview = Math.floor(Math.random() * 120)
-                        let randRating = Math.ceil(Math.random() * 5)
-            
-                        newcard.querySelector('#rating').innerHTML = randRating;
-                        newcard.querySelector('#review').innerHTML = randReview;
+                        
                         newcard.querySelector('.card-title').innerHTML = title;
                         newcard.querySelector('#description').innerHTML = description;
                         newcard.querySelector('#card-img').src = `./images/card_img${code[code.length - 1]}.svg`;

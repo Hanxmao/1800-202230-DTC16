@@ -7,8 +7,30 @@ travel = urlParams.get("travel")
 role = urlParams.get("role")
 type = urlParams.get("type")
 
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        currentUser = db.collection("users").doc(user.uid)
+        currentUser.get().then(userDoc => {
+            saved_cards = userDoc.data().saved_cards;
+            console.log(saved_cards);})
+        displayCards("credit_card");
+    } else {
+        alert("Please Log In to process the page.");
+        window.location.href = 'login.html'
+    }
+  });
+
 function setCardData(id) {
     localStorage.setItem('cardID', id);
+}
+
+function saveCard(id){
+    currentUser.set({
+        saved_cards: firebase.firestore.FieldValue.arrayUnion(id)
+    },{
+        merge:true
+    })
+    document.getElementById(`inform${id}`).innerHTML = "Saved"
 }
 
 function displayCards(collection) {
@@ -20,12 +42,10 @@ function displayCards(collection) {
                 var description = doc.data().description;
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
-                let randReview = Math.floor(Math.random() * 120)
-                let randRating = Math.ceil(Math.random() * 5)
-                console.log(cardID)
 
-                newcard.querySelector('#rating').innerHTML = randRating;
-                newcard.querySelector('#review').innerHTML = randReview;
+                if (saved_cards.includes(cardID)){
+                    newcard.querySelector('#save').innerHTML = "Saved"
+                }
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('#description').innerHTML = description;
                 newcard.querySelector('#card-img').src = `./images/card_img${cardID[cardID.length - 1]}.svg`;
@@ -33,10 +53,11 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
+                newcard.querySelector('#inform').id = `inform${cardID}`
+                newcard.querySelector('#save').onclick = () => saveCard(cardID)
 
 
                 document.getElementById("eachCard").appendChild(newcard);
-
             })
         })
     }
@@ -48,12 +69,10 @@ function displayCards(collection) {
                     var description = doc.data().description;
                     var cardID = doc.data().code;
                     let newcard = cardTemplate.content.cloneNode(true);
-                    let randReview = Math.floor(Math.random() * 120)
-                    let randRating = Math.ceil(Math.random() * 5)
-                    console.log(cardID)
-
-                    newcard.querySelector('#rating').innerHTML = randRating;
-                    newcard.querySelector('#review').innerHTML = randReview;
+    
+                    if (saved_cards.includes(cardID)){
+                        newcard.querySelector('#save').innerHTML = "Saved"
+                    }
                     newcard.querySelector('.card-title').innerHTML = title;
                     newcard.querySelector('#description').innerHTML = description;
                     newcard.querySelector('#card-img').src = `./images/card_img${cardID[cardID.length - 1]}.svg`;
@@ -61,8 +80,10 @@ function displayCards(collection) {
                     all_links.forEach((a) => {
                         a.onclick = () => setCardData(cardID)
                     })
-
-
+                    newcard.querySelector('#inform').id = `inform${cardID}`
+                    newcard.querySelector('#save').onclick = () => saveCard(cardID)
+    
+    
                     document.getElementById("eachCard").appendChild(newcard);
 
                 })
@@ -78,12 +99,10 @@ function displayCards(collection) {
                     var description = doc.data().description;
                     var cardID = doc.data().code;
                     let newcard = cardTemplate.content.cloneNode(true);
-                    let randReview = Math.floor(Math.random() * 120)
-                    let randRating = Math.ceil(Math.random() * 5)
-                    console.log(cardID)
-
-                    newcard.querySelector('#rating').innerHTML = randRating;
-                    newcard.querySelector('#review').innerHTML = randReview;
+    
+                    if (saved_cards.includes(cardID)){
+                        newcard.querySelector('#save').innerHTML = "Saved"
+                    }
                     newcard.querySelector('.card-title').innerHTML = title;
                     newcard.querySelector('#description').innerHTML = description;
                     newcard.querySelector('#card-img').src = `./images/card_img${cardID[cardID.length - 1]}.svg`;
@@ -91,8 +110,10 @@ function displayCards(collection) {
                     all_links.forEach((a) => {
                         a.onclick = () => setCardData(cardID)
                     })
-
-
+                    newcard.querySelector('#inform').id = `inform${cardID}`
+                    newcard.querySelector('#save').onclick = () => saveCard(cardID)
+    
+    
                     document.getElementById("eachCard").appendChild(newcard);
 
                 })
@@ -107,12 +128,10 @@ function displayCards(collection) {
                 var description = doc.data().description;
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
-                let randReview = Math.floor(Math.random() * 120)
-                let randRating = Math.ceil(Math.random() * 5)
-                console.log(cardID)
 
-                newcard.querySelector('#rating').innerHTML = randRating;
-                newcard.querySelector('#review').innerHTML = randReview;
+                if (saved_cards.includes(cardID)){
+                    newcard.querySelector('#save').innerHTML = "Saved"
+                }
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('#description').innerHTML = description;
                 newcard.querySelector('#card-img').src = `./images/card_img${cardID[cardID.length - 1]}.svg`;
@@ -120,6 +139,8 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
+                newcard.querySelector('#inform').id = `inform${cardID}`
+                newcard.querySelector('#save').onclick = () => saveCard(cardID)
 
 
                 document.getElementById("eachCard").appendChild(newcard);
@@ -133,12 +154,10 @@ function displayCards(collection) {
                 var description = doc.data().description;
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
-                let randReview = Math.floor(Math.random() * 120)
-                let randRating = Math.ceil(Math.random() * 5)
-                console.log(cardID)
 
-                newcard.querySelector('#rating').innerHTML = randRating;
-                newcard.querySelector('#review').innerHTML = randReview;
+                if (saved_cards.includes(cardID)){
+                    newcard.querySelector('#save').innerHTML = "Saved"
+                }
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('#description').innerHTML = description;
                 newcard.querySelector('#card-img').src = `./images/card_img${cardID[cardID.length - 1]}.svg`;
@@ -146,25 +165,25 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
+                newcard.querySelector('#inform').id = `inform${cardID}`
+                newcard.querySelector('#save').onclick = () => saveCard(cardID)
 
 
                 document.getElementById("eachCard").appendChild(newcard);
 
             })
         })
-    db.collection(collection).where("welcome_bonus", ">=", welcome_bonus).orderBy("welcome_bonus", "desc").limit(2).get()
+    db.collection(collection).where("welcome_bonus", ">", welcome_bonus).orderBy("welcome_bonus", "desc").limit(2).get()
         .then(snap => {
             snap.forEach(doc => {
                 var title = doc.data().name;
                 var description = doc.data().description;
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
-                let randReview = Math.floor(Math.random() * 120)
-                let randRating = Math.ceil(Math.random() * 5)
-                console.log(cardID)
 
-                newcard.querySelector('#rating').innerHTML = randRating;
-                newcard.querySelector('#review').innerHTML = randReview;
+                if (saved_cards.includes(cardID)){
+                    newcard.querySelector('#save').innerHTML = "Saved"
+                }
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('#description').innerHTML = description;
                 newcard.querySelector('#card-img').src = `./images/card_img${cardID[cardID.length - 1]}.svg`;
@@ -172,6 +191,8 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
+                newcard.querySelector('#inform').id = `inform${cardID}`
+                newcard.querySelector('#save').onclick = () => saveCard(cardID)
 
 
                 document.getElementById("eachCard").appendChild(newcard);
@@ -181,10 +202,4 @@ function displayCards(collection) {
 }
 
 
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        displayCards("credit_card")
-    } else {
-        alert("Please Log In to process the page.");
-    }
-  });
+
