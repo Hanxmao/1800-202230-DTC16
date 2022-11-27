@@ -1,6 +1,10 @@
 let urlParams = new URLSearchParams(window.location.search)
 let currentUser
 let saved_cards
+var review = 0
+let counter = 0
+review_array = []
+
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -40,17 +44,11 @@ function displayCards(collection) {
                 var description = doc.data().description;
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
-                let randReview = Math.floor(Math.random() * 120)
-                let randRating = Math.ceil(Math.random() * 5)
-                console.log(cardID)
 
                 if (saved_cards.includes(cardID)){
                     console.log("in");
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
-
-                newcard.querySelector('#rating').innerHTML = randRating;
-                newcard.querySelector('#review').innerHTML = randReview;
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('#description').innerHTML = description;
                 newcard.querySelector('#card-img').src = `./images/card_img${cardID[cardID.length - 1]}.svg`;
@@ -62,7 +60,6 @@ function displayCards(collection) {
 
 
                 document.getElementById("eachCard").appendChild(newcard);
-
             })
         })
     }
@@ -74,17 +71,13 @@ function displayCards(collection) {
                 var description = doc.data().description;
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
-                let randReview = Math.floor(Math.random() * 120)
-                let randRating = Math.ceil(Math.random() * 5)
-                console.log(cardID)
 
                 if (saved_cards.includes(cardID)){
                     console.log("in");
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
     
-                newcard.querySelector('#rating').innerHTML = randRating;
-                newcard.querySelector('#review').innerHTML = randReview;
+
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('#description').innerHTML = description;
                 newcard.querySelector('#card-img').src = `./images/card_img${cardID[cardID.length - 1]}.svg`;

@@ -2,13 +2,17 @@ let cardID = localStorage.getItem("cardID");
 let currentUser
 let saved_cards
 
+
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         currentUser = db.collection("users").doc(user.uid)
         currentUser.get().then(userDoc => {
             saved_cards = userDoc.data().saved_cards;
             console.log(saved_cards);})
+            
+        displayReview()
         displayCard()
+   
 
     } else {
         alert("Please Log In to process the page.");
@@ -78,11 +82,13 @@ function writeReview() {
             //get the document for current user.
             currentUser.get()
                 .then(userDoc => {
+                    var userName = userDoc.data().name
                     db.collection("reviews").add({
                         code: cardID,
                         userID: userID,
                         description: Description,
                         rating: Rating,
+                        name: userName,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(() => {
                         window.location.href = "card_detail.html"; //new line added
@@ -93,3 +99,32 @@ function writeReview() {
         }
     });
 }
+
+displayReview = ()=>{
+    let cardTemplate = document.getElementById("cardTemplate");
+    db.collection('reviews').where('code', '==', cardID)
+    .get().then(review => {
+        console.log(review.docs);
+        for(i=0;i<review.docs.length;i++){
+            user = review.docs[i].data().name
+            description = review.docs[i].data().description
+            rating = review.docs[i].data().rating
+            timestamp = review.docs[i].data().timestamp.toDate()
+            let date = timestamp.toDateString()
+            time = new Date(timestamp).toLocaleTimeString('en-US')
+
+            let newcard = cardTemplate.content.cloneNode(true)
+            newcard.querySelector('.user').innerHTML = user;
+            newcard.querySelector('#description').innerHTML = description;
+            newcard.querySelector('#rate').innerHTML = `${rating}.0`;
+            newcard.querySelector('#time').innerHTML = `${time} ${date}`;
+
+            document.getElementById("forReview").appendChild(newcard);
+            
+        }
+        // review.docs.forEach((doc)=>{
+            
+        // })
+    })
+}
+
