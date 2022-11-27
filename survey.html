@@ -27,6 +27,7 @@
     <!-- Other libraries go here -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="/styles/style.css" />
 </head>
 
 <body>
@@ -34,12 +35,14 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <header id="navbarPlaceholder"></header>
-    <div class="card my-3" style="width: 96%;margin: auto;">
+    <div class="card my-3" style="width: 96%;margin: auto; background-color: #09243f;
+    color: white;">
         <div class="card-header">
             <h5><em>Get the right card just for you!</em></h5>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">
+            <li class="list-group-item" style="background-color: #09243f;
+            color: white;">
                 <p>1. Are you:</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="role" class="role" value="student">
@@ -60,7 +63,8 @@
                     </label>
                 </div>
             </li>
-            <li class="list-group-item">
+            <li class="list-group-item" style="background-color: #09243f;
+            color: white;">
                 <p>2. Do you travel a lot?</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="travel" class="travel" value="true">
@@ -75,7 +79,8 @@
                     </label>
                 </div>
             </li>
-            <li class="list-group-item">
+            <li class="list-group-item" style="background-color: #09243f;
+            color: white;">
                 <p>3. What type of credit card you want?</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="type" class="type" value="cash_back">
@@ -96,23 +101,26 @@
                     </label>
                 </div>
             </li>
-            <li class="list-group-item">
+            <li class="list-group-item" style="background-color: #09243f;
+            color: white;">
                 <label for="annual_fee" class="form-label">4. Annual fee should lower than:</label>
                 <div style="text-align:center;" id="annual_output">50</div>
                 <input type="range" class="form-range" min="0" max="100" step="1" id="annual_fee" value="50">
             </li>
-            <li class="list-group-item">
+            <li class="list-group-item" style="background-color: #09243f;
+            color: white;">
                 <label for="extra_fee" class="form-label">5. Extra fee should lower than:</label>
                 <div style="text-align:center;" id="extra_output">50</div>
                 <input type="range" class="form-range" min="0" max="100" step="1" id="extra_fee" value="50">
             </li>
-            <li class="list-group-item">
+            <li class="list-group-item" style="background-color: #09243f;
+            color: white;">
                 <label for="welcome_bonus" class="form-label">6. Welcome bonus should higher than:</label>
                 <div style="text-align:center;" id="welcome_output">50</div>
                 <input type="range" class="form-range" min="0" max="250" step="10" id="welcome_bonus" value="50">
             </li>
         </ul>
-        <a class="btn btn-primary" href="#" role="button" id="submit">Submit</a>
+        <a class="btn btn-info" href="#" role="button" id="submit">Submit</a>
     </div>
     <div class="my-5"> </div>
     <div class="my-5"> </div>

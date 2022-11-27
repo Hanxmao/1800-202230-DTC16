@@ -21,11 +21,17 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <title>Credo</title>
+    <style>
+        *{
+            font-family: Helvetica, Arial, sans-serif;
+        }
+       
+    </style>
 </head>
 
 <body>
     <header id="navbarPlaceholder"></header>
-    <main>
+    <main style="background-color: #09243f;">
         <h2 style="background-color: #09243f;color: white;text-align: center;" class="p-2 mb-3">Browse all credit cards</h2>
         <div class="container">
             <div id="eachCard" class="row row-cols-auto">
@@ -33,7 +39,7 @@
         </div>
 
         <template id="cardTemplate">
-            <div class="card m-2">
+            <div class="card m-2" style="width: 96%;margin:auto;background-color: #0e133f;color: white;">
                 <div class="card-body">
                     <div class="row justify-content-around ">
                         <div class="col-8 px-1">
@@ -43,10 +49,10 @@
                         </div>
                         <div class="col px-1">
                             <div>
-                                <div class="d-grid gap-3">
-                                    <img id="card-img" style="width: 100%; height: auto" src="" alt="sample card">
-                                    <a href="./card_detail.html" class="btn btn-primary">Details</a>
-                                    <a href="#" class="btn btn-primary" id="save">Save</a>
+                                <div class="d-grid gap-3" >
+                                    <img id="card-img" style="width: 100%; height: auto;" src="" alt="sample card">
+                                    <a href="./card_detail.html" class="btn btn-info" >Details</a>
+                                    <a href="#" class="btn btn-info" id="save">Save</a>
                                     <p id="inform" class="text-center"></p>
                                 </div>
                             </div>

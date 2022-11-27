@@ -27,6 +27,11 @@
     <!-- Other libraries go here -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- Link to styles of your own -->
+    <style>
+        *{
+            font-family: Helvetica, Arial, sans-serif;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,32 +39,34 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <header id="navbarPlaceholder"></header>
-    <div>
-        <form class="form-floating">
-            <input type="text" class="form-control" id="home_value" placeholder="400000">
-            <label for="home_value">Home Value</label>
-        </form>
-        <form class="form-floating">
-            <input type="email" class="form-control" id="downpayment">
-            <label for="downpayment">Down Payment</label>
-        </form>
-        <form class="form-floating">
-            <input type="email" class="form-control" id="interest_rate">
-            <label for="interest_rate">Interest Rate</label>
-        </form>
-        <form class="form-floating">
-            <input type="email" class="form-control" id="duration_years">
-            <label for="duration_years">Duration Years</label>
-        </form>
-
-    </div>
-
-    <div class="inline-flex">
+    <main style="background-color:#09243f ;height: 100vh;">
         <div>
-            <h3 id="result"></h3>
+            <form class="form-floating">
+                <input type="text" class="form-control" id="home_value" placeholder="400000" style="background-color:#09243f ; color: white;">
+                <label for="home_value" style=" color: white;">Home Value</label>
+            </form>
+            <form class="form-floating">
+                <input type="email" class="form-control" id="downpayment" style="background-color:#09243f ; color: white;">
+                <label for="downpayment" style=" color: white;">Down Payment</label>
+            </form>
+            <form class="form-floating">
+                <input type="email" class="form-control" id="interest_rate" style="background-color:#09243f ; color: white;">
+                <label for="interest_rate" style="color: white;">Interest Rate</label>
+            </form>
+            <form class="form-floating">
+                <input type="email" class="form-control" id="duration_years" style="background-color:#09243f ; color: white;">
+                <label for="duration_years" style=" color: white;">Duration Years</label>
+            </form>
+    
         </div>
-        <button type="button" class="btn btn-primary" id="convert">Convert</button>
-    </div>
+    
+        <div class="inline-flex">
+            <div>
+                <h3 id="result" style=" color: white;"></h3>
+            </div>
+            <button type="button" class="btn btn-info" id="convert">Convert</button>
+        </div>
+    </main>
 
 
 

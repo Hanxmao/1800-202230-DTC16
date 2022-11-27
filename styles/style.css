@@ -30,6 +30,7 @@ span img {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family:Helvetica;
 }
 
 h4 {
@@ -50,5 +51,8 @@ header {
   background-color: #262626;
 }
 
-
+body {
+  background-color: #09243f;
+  color: white;
+}
 
