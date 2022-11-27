@@ -1,11 +1,29 @@
+let currentUser
+
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
+        currentUser = db.collection("users").doc(user.uid)
         getSaved(user)
     } else {
         alert("Please Log In to process the page.");
         window.location.href = 'login.html'
     }
 });
+
+function setCardData(id) {
+    localStorage.setItem('cardID', id);
+}
+
+
+function removeCard(code){
+    currentUser.set({
+        saved_cards: firebase.firestore.FieldValue.arrayRemove(code)
+    },{
+        merge:true
+    })
+    document.getElementById(`inform${code}`).innerHTML = 'Removed!'
+    
+}
 
 function getSaved(user) {
     db.collection("users").doc(user.uid).get()
@@ -37,7 +55,9 @@ function getSaved(user) {
                         all_links.forEach((a) => {
                             a.onclick = () => setCardData(code)
                         })
-                        newcard.querySelector('#save').onclick = () => saveCard(code)
+
+                        newcard.querySelector('#remove').onclick = () => removeCard(code)
+                        newcard.querySelector('#inform').id = `inform${code}`
             
             
                         document.getElementById("eachCard").appendChild(newcard);

@@ -32,7 +32,9 @@ function saveCard(id){
     },{
         merge:true
     })
+    document.getElementById(`inform`).innerHTML = "Saved"
 }
+
 
 
 function displayCard(){
@@ -47,9 +49,9 @@ function displayCard(){
                 extra_fee = thisCard.extra_fee
                 reward = thisCard.reward
                 benefit = thisCard.benefit
-                cardID = thisCard.code
+                code = thisCard.code
 
-                if (saved_cards.includes(cardID)){
+                if (saved_cards.includes(code)){
                     console.log("in");
                     document.getElementById('save').innerHTML = "Saved"
                 }
@@ -62,9 +64,9 @@ function displayCard(){
                 document.getElementById('extra_fee').innerHTML = `Extra fees: ${extra_fee}`
                 document.getElementById('reward').innerHTML = reward
                 document.getElementById('benefit').innerHTML = benefit
-                document.getElementById('card_img').src = `../images/card_img${cardID[cardID.length - 1]}.svg`
+                document.getElementById('card_img').src = `../images/card_img${code[code.length - 1]}.svg`
                 document.getElementById('back_btn').onclick = back_handler
-                document.getElementById('save').onclick = () => saveCard(cardID)
+                document.getElementById('save').onclick = () => saveCard(code)
 
             })
 }

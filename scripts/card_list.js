@@ -1,9 +1,7 @@
 let urlParams = new URLSearchParams(window.location.search)
 let currentUser
 let saved_cards
-var review = 0
-let counter = 0
-review_array = []
+
 
 
 firebase.auth().onAuthStateChanged((user) => {
@@ -25,7 +23,9 @@ function saveCard(id){
     },{
         merge:true
     })
+    document.getElementById(`inform${id}`).innerHTML = "Saved"
 }
+
 
 function setCardData(id) {
     localStorage.setItem('cardID', id);
@@ -56,6 +56,7 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
+                newcard.querySelector('#inform').id = `inform${cardID}`
                 newcard.querySelector('#save').onclick = () => saveCard(cardID)
 
 
@@ -85,6 +86,7 @@ function displayCards(collection) {
                 all_links.forEach((a) => {
                     a.onclick = () => setCardData(cardID)
                 })
+                newcard.querySelector('#inform').id = `inform${cardID}`
                 newcard.querySelector('#save').onclick = () => saveCard(cardID)
     
     
