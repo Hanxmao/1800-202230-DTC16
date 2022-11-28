@@ -19,6 +19,7 @@ function selectHandler(){
     //whenever the two select values changed, the table fields will change to the matched data
     $('#cardtype1').change(() => {
         cardName1 = $("#cardtype1 option:selected").val()
+        //read the data from documents in credit_card collection that name field same as cardName1
         db.collection('credit_card').where('name', '==', cardName1)
             .get().then(card => {
                 let firstCard = card.docs[0].data()
@@ -39,6 +40,7 @@ function selectHandler(){
     })
     $('#cardtype2').change(() => {
         cardName2 = $("#cardtype2 option:selected").val()
+        //read the data from documents in credit_card collection that name field same as cardName2
         db.collection('credit_card').where('name', '==', cardName2)
             .get().then(card => {
                 let secondCard = card.docs[0].data()

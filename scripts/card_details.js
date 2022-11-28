@@ -5,7 +5,9 @@ let saved_cards
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+        //read current user document
         currentUser = db.collection("users").doc(user.uid)
+        // read the value in saved_cards filed in current user document
         currentUser.get().then(userDoc => {
             saved_cards = userDoc.data().saved_cards;
         })
@@ -25,6 +27,7 @@ back_handler = () => {
 }
 
 function saveCard(id){
+    //add(write) credit card code saved_cards field
     currentUser.set({
         saved_cards: firebase.firestore.FieldValue.arrayUnion(id)
     },{
@@ -37,6 +40,7 @@ function saveCard(id){
 
 
 function displayCard(){
+    //read credit_card documents that the value of code field is same as current cardID
     db.collection('credit_card').where('code', '==', cardID)
             .get().then(card => {
                 let thisCard = card.docs[0].data()
@@ -72,19 +76,19 @@ function displayCard(){
 
 
 function writeReview() {
-
     let Description = document.getElementById("description").value;
-
     let Rating = document.querySelector('input[name="rate"]:checked').value;
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
+            //read the current user uid from the document in users collection
             var currentUser = db.collection("users").doc(user.uid)
             var userID = user.uid;
-            //get the document for current user.
+            //get(read) the document for current user.
             currentUser.get()
                 .then(userDoc => {
                     var userName = userDoc.data().name
+                    //after get(read) the data from current user, add(write) the data to reviews collection
                     db.collection("reviews").add({
                         code: cardID,
                         userID: userID,
@@ -97,6 +101,7 @@ function writeReview() {
                     })
                 })
         } else {
+            //alert user and redirect to login page if user is not login
             alert("Please Log In to process the page.");
             window.location.href = 'login.html'
         }
@@ -106,6 +111,7 @@ function writeReview() {
 
 displayReview = ()=>{
     let cardTemplate = document.getElementById("cardTemplate");
+    //get(read) the data from the documents that the value of the code field is same as cardID in reviews collection
     db.collection('reviews').where('code', '==', cardID)
     .get().then(review => {
         for(i=0;i<review.docs.length;i++){

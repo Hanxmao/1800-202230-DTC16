@@ -2,8 +2,6 @@ let urlParams = new URLSearchParams(window.location.search)
 let currentUser
 let saved_cards
 
-
-
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         currentUser = db.collection("users").doc(user.uid)
@@ -23,11 +21,13 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 
 function saveCard(id){
+    //set(write) the id value to saved_cards field
     currentUser.set({
         saved_cards: firebase.firestore.FieldValue.arrayUnion(id)
     },{
         merge:true
     })
+    //prompt user after user click save button
     document.getElementById(`inform${id}`).innerHTML = "Saved"
 }
 
@@ -37,6 +37,7 @@ function displayCards(collection) {
     // if url params contain type, get the matched type cards from firebase
     // else get all cards data from firebase
     if (type) {
+        //read the documents that category field value same as type
         db.collection(collection).where("category", "==", type).get()
         .then(snap => {
             snap.forEach(doc => {
@@ -66,6 +67,7 @@ function displayCards(collection) {
         })
     }
     else {
+        //read all the documents in the collection
         db.collection(collection).get()
         .then(snap => {
             snap.forEach(doc => {
@@ -105,6 +107,7 @@ function displayCards(collection) {
 
 // ---------------------------write data to firebase(Done!!!! Do not call again!)----------------------
 // 5 types of credit cards: Travel, Student, Business, low interest and Cash back
+//write documents to credit_card collection
 function writeCards() {
     //create the credit card collection and the card document
     let cardsRef = db.collection("credit_card");

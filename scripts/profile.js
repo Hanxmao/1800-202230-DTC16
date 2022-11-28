@@ -14,6 +14,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 //get user data from firebase and put them in the form
 function populateInfo(){
+    //read the current user document from user collection
     currentUser.get()
     .then(userDoc =>{
         let name = userDoc.data().name
@@ -59,7 +60,7 @@ function saveUserInfo(){
     userCity = document.getElementById('city').value
     userPhone = document.getElementById('phone').value
     userPostalCode = document.getElementById('post_code').value
-
+    //update(write) the data to each field in current user document
     currentUser.update({
         name: userName,
         country: userCountry,

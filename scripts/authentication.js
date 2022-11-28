@@ -6,6 +6,7 @@ var uiConfig = {
         signInSuccessWithAuthResult: function (authResult, redirectUrl) {
             var user = authResult.user;
             if (authResult.additionalUserInfo.isNewUser) {
+                //write data to current user document in users collection
                 db.collection("users").doc(user.uid).set({
                     name: user.displayName,
                     email: user.email,

@@ -16,6 +16,7 @@ function setCardData(id) {
 }
 
 function removeCard(code){
+    //remove(write) the card code from the saved_cards array from current user document
     currentUser.set({
         saved_cards: firebase.firestore.FieldValue.arrayRemove(code)
     },{
@@ -26,11 +27,13 @@ function removeCard(code){
 }
 
 function getSaved(user) {
+    //read current user document
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {
             var saved_cards = userDoc.data().saved_cards;
             let cardTemplate = document.getElementById("cardTemplate");
             saved_cards.forEach(cardID => {
+                //read the documents from credit_card collection that code filed value same as cardID
                 db.collection("credit_card").where("code", "==", cardID).get().then(snap => {
                     size = snap.size;
                     queryData = snap.docs;
@@ -54,7 +57,6 @@ function getSaved(user) {
                         newcard.querySelector('#remove').onclick = () => removeCard(code)
                         //prompt user "removed" once the card is removed
                         newcard.querySelector('#inform').id = `inform${code}`
-            
             
                         document.getElementById("eachCard").appendChild(newcard);
                     } else {

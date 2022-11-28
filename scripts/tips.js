@@ -1,5 +1,6 @@
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+        //read the documents from tips collection
         displayTips("tips");
     } else {
         //alert user and redirect to login page if user is not login
@@ -9,6 +10,7 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 function displayTips(collection) {
+    //read the documents from collection
     db.collection(collection).get()
         .then(snap => {
             // present 3 tips that store in firebase to the 4th to 6th collapse
