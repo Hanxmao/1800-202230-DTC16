@@ -15,6 +15,7 @@ var uiConfig = {
                     city: "",
                     province: "",
                     postal_code: "",
+                    saved_cards: []
                 }).then(function () {
                     console.log("New user added to firestore");
                     window.location.assign("main.html");

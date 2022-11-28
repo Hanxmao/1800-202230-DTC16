@@ -47,7 +47,7 @@ function displayCards(collection) {
                 let newcard = cardTemplate.content.cloneNode(true);
 
                 //if the card already saved by user, then change "save" to "saved" to prompt user
-                if (saved_cards.includes(cardID)){
+                if (saved_cards && saved_cards.includes(cardID)){
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
 
@@ -77,7 +77,7 @@ function displayCards(collection) {
                 let newcard = cardTemplate.content.cloneNode(true);
 
                 //if the card already saved by user, then change "save" to "saved" to prompt user
-                if (saved_cards.includes(cardID)){
+                if (saved_cards && saved_cards.includes(cardID)){
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
     
