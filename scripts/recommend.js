@@ -5,6 +5,7 @@ let welcome_bonus = Number(urlParams.get("welcome_bonus"))
 let travel = urlParams.get("travel")
 let role = urlParams.get("role")
 let type = urlParams.get("type")
+let cardID
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -48,7 +49,7 @@ function displayCards(collection) {
                 let newcard = cardTemplate.content.cloneNode(true);
                 
                 //if the card already saved by user, then change "save" to "saved" to prompt user
-                if (saved_cards.includes(cardID)){
+                if (saved_cards && saved_cards.includes(cardID)){
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
 
@@ -76,7 +77,7 @@ function displayCards(collection) {
                     var cardID = doc.data().code;
                     let newcard = cardTemplate.content.cloneNode(true);
     
-                    if (saved_cards.includes(cardID)){
+                    if (saved_cards && saved_cards.includes(cardID)){
                         newcard.querySelector('#save').innerHTML = "Saved"
                     }
                     newcard.querySelector('.card-title').innerHTML = title;
@@ -107,7 +108,7 @@ function displayCards(collection) {
                     var cardID = doc.data().code;
                     let newcard = cardTemplate.content.cloneNode(true);
     
-                    if (saved_cards.includes(cardID)){
+                    if (saved_cards && saved_cards.includes(cardID)){
                         newcard.querySelector('#save').innerHTML = "Saved"
                     }
                     newcard.querySelector('.card-title').innerHTML = title;
@@ -136,7 +137,7 @@ function displayCards(collection) {
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
 
-                if (saved_cards.includes(cardID)){
+                if (saved_cards && saved_cards.includes(cardID)){
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
                 newcard.querySelector('.card-title').innerHTML = title;
@@ -163,7 +164,7 @@ function displayCards(collection) {
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
 
-                if (saved_cards.includes(cardID)){
+                if (saved_cards && saved_cards.includes(cardID)){
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
                 newcard.querySelector('.card-title').innerHTML = title;
@@ -190,7 +191,7 @@ function displayCards(collection) {
                 var cardID = doc.data().code;
                 let newcard = cardTemplate.content.cloneNode(true);
 
-                if (saved_cards.includes(cardID)){
+                if (saved_cards && saved_cards.includes(cardID)){
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
                 newcard.querySelector('.card-title').innerHTML = title;
