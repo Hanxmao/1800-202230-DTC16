@@ -1,8 +1,9 @@
-## My Web Application (Add your Title here)
+## My Web Application Credo
 
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
+* [Reference](#reference)
 
 ## General Info
 
@@ -84,6 +85,10 @@ It has the following subfolders and files:
     /style.css                     
 ├── .firebase                # Folder for firebase hosting files
     /hosting..cache
-
-
 ```
+## Reference
+Images:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;All credit card images: https://freesvg.org/ (accessed Nov 28, 2022)<br>
+APIs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Currency convert function: https://api-ninjas.com/api/convertcurrency (accessed Nov 28, 2022)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Mortgage calculator function: https://api-ninjas.com/api/mortgagecalculator (accessed Nov 28, 2022)<br>
