@@ -36,7 +36,7 @@ function saveCard(id){
 
 function displayCard(){
     //read credit_card documents that the value of code field is same as current cardID
-    db.collection('credit_card').where('code', '==', cardID)
+    db.collection('credit_cards').where('code', '==', cardID)
             .get().then(card => {
                 let thisCard = card.docs[0].data()
                 cardName = thisCard.name

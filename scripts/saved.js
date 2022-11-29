@@ -33,8 +33,8 @@ function getSaved(user) {
             var saved_cards = userDoc.data().saved_cards;
             let cardTemplate = document.getElementById("cardTemplate");
             saved_cards.forEach(cardID => {
-                //read the documents from credit_card collection that code filed value same as cardID
-                db.collection("credit_card").where("code", "==", cardID).get().then(snap => {
+                //read the documents from credit_cards collection that code filed value same as cardID
+                db.collection("credit_cards").where("code", "==", cardID).get().then(snap => {
                     size = snap.size;
                     queryData = snap.docs;
 

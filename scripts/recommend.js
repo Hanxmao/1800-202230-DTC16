@@ -14,7 +14,7 @@ firebase.auth().onAuthStateChanged((user) => {
         currentUser.get().then(userDoc => {
             saved_cards = userDoc.data().saved_cards;
         })
-        displayCards("credit_card");
+        displayCards("credit_cards");
     } else {
         //alert user and redirect to login page if user is not login
         alert("Please Log In to process the page.");

@@ -8,7 +8,7 @@ firebase.auth().onAuthStateChanged((user) => {
         currentUser.get().then(userDoc => {
             saved_cards = userDoc.data().saved_cards;
         })
-        displayCards("credit_card");
+        displayCards("credit_cards");
     } else {
         //alert user and redirect to login page if user is not login
         alert("Please Log In to process the page.");
@@ -102,10 +102,10 @@ function displayCards(collection) {
 
 // ---------------------------write data to firebase(Done!!!! Do not call again!)----------------------
 // 5 types of credit cards: Travel, Student, Business, low interest and Cash back
-//write documents to credit_card collection
+//write documents to credit_cards collection
 function writeCards() {
     //create the credit card collection and the card document
-    let cardsRef = db.collection("credit_card");
+    let cardsRef = db.collection("credit_cards");
 
     cardsRef.add({
         code: "RBC001", // for img, should be bank+number
