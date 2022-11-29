@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
     <!-- font-awesome, icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- firebase CDN link -->
@@ -22,22 +22,21 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <title>Credo</title>
     <style>
-        *{
+        * {
             font-family: Helvetica, Arial, sans-serif;
         }
-       
     </style>
 </head>
 
 <body>
     <header id="navbarPlaceholder"></header>
     <main style="background-color: #09243f;">
-        <h2 style="background-color: #09243f;color: white;text-align: center;" class="p-2 mb-3">Browse all credit cards</h2>
+        <h2 style="background-color: #09243f;color: white;text-align: center;" class="p-2 mb-3">Browse all credit cards
+        </h2>
         <div class="container">
             <div id="eachCard" class="row row-cols-auto">
             </div>
         </div>
-
         <template id="cardTemplate">
             <div class="card m-2" style="width: 96%;margin:auto;background-color: #0e133f;color: white;">
                 <div class="card-body">
@@ -49,9 +48,9 @@
                         </div>
                         <div class="col px-1">
                             <div>
-                                <div class="d-grid gap-3" >
+                                <div class="d-grid gap-3">
                                     <img id="card-img" style="width: 100%; height: auto;" src="" alt="sample card">
-                                    <a href="./card-detail.html" class="btn btn-info" >Details</a>
+                                    <a href="./card-detail.html" class="btn btn-info">Details</a>
                                     <a href="#" class="btn btn-info" id="save">Save</a>
                                     <p id="inform" class="text-center"></p>
                                 </div>
@@ -70,9 +69,6 @@
     <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/card-list.js"></script>
     <script src="./scripts/skeleton.js"></script>
-
 </body>
-
-
 
 </html>

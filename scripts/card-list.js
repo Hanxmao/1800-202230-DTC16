@@ -81,7 +81,6 @@ function displayCards(collection) {
                     newcard.querySelector('#save').innerHTML = "Saved"
                 }
     
-
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('#description').innerHTML = description;
                 newcard.querySelector('#card-img').src = `./images/card-img${cardID[cardID.length - 1]}.svg`;
@@ -92,7 +91,6 @@ function displayCards(collection) {
                 newcard.querySelector('#inform').id = `inform${cardID}`
                 newcard.querySelector('#save').onclick = () => saveCard(cardID)
     
-    
                 document.getElementById("eachCard").appendChild(newcard);
     
             })
@@ -101,9 +99,6 @@ function displayCards(collection) {
 
 
 }
-
-
-
 
 // ---------------------------write data to firebase(Done!!!! Do not call again!)----------------------
 // 5 types of credit cards: Travel, Student, Business, low interest and Cash back

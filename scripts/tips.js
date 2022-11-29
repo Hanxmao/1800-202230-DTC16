@@ -27,7 +27,6 @@ function displayTips(collection) {
         })
 }
 
-
 //------------------------------write tips data from tips.json(Done)--------------------------
 //just for fun, not necessary. Not a good idea to store sentences and paragraphs to database, because it will not recognize the newline character, so it will mess up the structure.
 async function getJSONdata() {

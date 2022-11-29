@@ -2,7 +2,6 @@ let cardID = localStorage.getItem("cardID");
 let currentUser
 let saved_cards
 
-
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         //read current user document
@@ -20,8 +19,6 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-
-
 back_handler = () => {
     window.history.back();
 }
@@ -36,8 +33,6 @@ function saveCard(id){
     //Prompt user after they the card is saved to the saved_list
     document.getElementById(`inform`).innerHTML = "Saved"
 }
-
-
 
 function displayCard(){
     //read credit_card documents that the value of code field is same as current cardID
@@ -74,7 +69,6 @@ function displayCard(){
             })
 }
 
-
 function writeReview() {
     let Description = document.getElementById("description").value;
     let Rating = document.querySelector('input[name="rate"]:checked').value;
@@ -108,7 +102,6 @@ function writeReview() {
     });
 }
 
-
 displayReview = ()=>{
     let cardTemplate = document.getElementById("cardTemplate");
     //get(read) the data from the documents that the value of the code field is same as cardID in reviews collection
@@ -133,4 +126,3 @@ displayReview = ()=>{
         }
     })
 }
-

@@ -28,7 +28,6 @@ firebase.auth().onAuthStateChanged((user) => {
             url_params += `&annual_fee=${annual_fee}` + `&extra_fee=${extra_fee}` + `&welcome_bonus=${welcome_bonus}` + `&travel=${travel}` + `&role=${role}` + `&type=${type}`
             $('#submit').attr("href", `./recommend.html?${url_params}`)
         })
-
     } else {
         //alert user and redirect to login page if user is not login
         alert("Please Log In to process the page.");

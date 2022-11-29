@@ -34,9 +34,9 @@
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <style>
-    *{
-        font-family: Helvetica, Arial, sans-serif;
-        color: white;
+    * {
+      font-family: Helvetica, Arial, sans-serif;
+      color: white;
     }
   </style>
 </head>
@@ -45,121 +45,141 @@
   <header id="navbarPlaceholder"></header>
   <main style="background-color:#09243f ;height: 100vh;">
     <h2 style="text-align: center;">Tips & Advice</h2>
-  <div class="card" style="width:96%;margin: auto;">
-    <div class="accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne" >
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color:#09243f ;color: white;">
-            Balance alerts can help keep spending in check
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body" style="background-color:#09243f ;color: white;">
-            <p>
-              When you pay for everything with cash, it can be easy to see how much you're spending as those tens and
-              twenties disappear from your wallet. Tracking how much you put on a credit card (or a debit card, for that
-              matter) isn't as simple, especially if you're just getting started with credit.
-              <br><br>
-              Many credit card issuers, however, allow you to set up balance alerts — notifications that let you know by
-              text, email or in-app message that your balance is approaching a certain level that you've set. You could
-              set an alert for when your balance approaches, say, $500, or for an amount that equals 30% of your credit
-              limit (the point at which a balance might start to ding your credit score).
-            </p>
+    <div class="card" style="width:96%;margin: auto;">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"
+              style="background-color:#09243f ;color: white;">
+              Balance alerts can help keep spending in check
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body" style="background-color:#09243f ;color: white;">
+              <p>
+                When you pay for everything with cash, it can be easy to see how much you're spending as those tens and
+                twenties disappear from your wallet. Tracking how much you put on a credit card (or a debit card, for
+                that
+                matter) isn't as simple, especially if you're just getting started with credit.
+                <br><br>
+                Many credit card issuers, however, allow you to set up balance alerts — notifications that let you know
+                by
+                text, email or in-app message that your balance is approaching a certain level that you've set. You
+                could
+                set an alert for when your balance approaches, say, $500, or for an amount that equals 30% of your
+                credit
+                limit (the point at which a balance might start to ding your credit score).
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color:#09243f ;color: white;">
-            Spending analysis tools help you with your budget
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body" style="background-color:#09243f ;color: white;">
-            <p>
-              Most major credit card issuers offer spending analysis tools, which you can access from your online account. You pick a date range — a month, a year, a customized period — and the tool shows you how much you've spent on your card in various categories. Those categories are typically determined by the merchant where you did your spending — supermarkets, for example, or gas stations, restaurants or department stores.
-              <br><br>
-              Look around for a tool next time you're logged in. It can provide insight on where you’re nailing your budget and where you might need to cut back.
-            </p>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
+              style="background-color:#09243f ;color: white;">
+              Spending analysis tools help you with your budget
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body" style="background-color:#09243f ;color: white;">
+              <p>
+                Most major credit card issuers offer spending analysis tools, which you can access from your online
+                account. You pick a date range — a month, a year, a customized period — and the tool shows you how much
+                you've spent on your card in various categories. Those categories are typically determined by the
+                merchant where you did your spending — supermarkets, for example, or gas stations, restaurants or
+                department stores.
+                <br><br>
+                Look around for a tool next time you're logged in. It can provide insight on where you’re nailing your
+                budget and where you might need to cut back.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color:#09243f ;color: white;">
-            Midcycle payments could boost your credit
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body" style="background-color:#09243f ;color: white;">
-            <p>
-              Your credit card issuer reports your account information to the three major credit bureaus every month. One key data point that gets reported is your balance, which is used to calculate your credit utilization ratio. That ratio is the percentage of your available credit that you're currently using. If you have a $5,000 credit limit, for example, and your balance is $1,000, then your utilization is 20%.
-              <br>
-              <br>
-              Credit utilization is a major factor in your credit scores. It's an element of "amounts you owe," which accounts for 30% of your FICO score. In general, you want to keep utilization under 30%, but the lower, the better.
-              <br>
-              <br>
-              But here's the thing: Your card issuer doesn't necessarily report your account information after you make your monthly payment. It could be reported at any point in your billing cycle. Depending on when that is, and how much you charge each month, the utilization that gets reflected in your credit scores could be high or low. One potential solution: Don't wait till your due date to pay your bill. Make a habit of going online in the middle of the billing cycle and paying down your balance.
-            </p>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
+              style="background-color:#09243f ;color: white;">
+              Midcycle payments could boost your credit
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body" style="background-color:#09243f ;color: white;">
+              <p>
+                Your credit card issuer reports your account information to the three major credit bureaus every month.
+                One key data point that gets reported is your balance, which is used to calculate your credit
+                utilization ratio. That ratio is the percentage of your available credit that you're currently using. If
+                you have a $5,000 credit limit, for example, and your balance is $1,000, then your utilization is 20%.
+                <br>
+                <br>
+                Credit utilization is a major factor in your credit scores. It's an element of "amounts you owe," which
+                accounts for 30% of your FICO score. In general, you want to keep utilization under 30%, but the lower,
+                the better.
+                <br>
+                <br>
+                But here's the thing: Your card issuer doesn't necessarily report your account information after you
+                make your monthly payment. It could be reported at any point in your billing cycle. Depending on when
+                that is, and how much you charge each month, the utilization that gets reflected in your credit scores
+                could be high or low. One potential solution: Don't wait till your due date to pay your bill. Make a
+                habit of going online in the middle of the billing cycle and paying down your balance.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFour">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="title4" style="background-color:#09243f ;color: white;">
-            
-          </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body" id="description4" style="background-color:#09243f ;color: white;">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="title4"
+              style="background-color:#09243f ;color: white;">
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body" id="description4" style="background-color:#09243f ;color: white;">
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="title5"
+              style="background-color:#09243f ;color: white;">
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body" id="description5" style="background-color:#09243f ;color: white;">
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSix">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" id="title6"
+              style="background-color:#09243f ;color: white;">
 
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFive">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="title5" style="background-color:#09243f ;color: white;">
-            
-          </button>
-        </h2>
-        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body" id="description5" style="background-color:#09243f ;color: white;">
+            </button>
+          </h2>
+          <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body" id="description6" style="background-color:#09243f ;color: white;">
 
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingSix">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" id="title6" style="background-color:#09243f ;color: white;">
-
-          </button>
-        </h2>
-        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body" id="description6" style="background-color:#09243f ;color: white;">
-
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </main>
   <nav id="footerPlaceholder"></nav>
+  <!-- script -->
   <script src="./scripts/firebaseAPI.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/tips.js"></script>
-
 </body>
 
 </html>

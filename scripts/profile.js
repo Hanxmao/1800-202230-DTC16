@@ -46,7 +46,6 @@ function populateInfo(){
 
 }
 
-
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;
