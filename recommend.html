@@ -22,7 +22,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <link rel="stylesheet" href="./styles/card_detail.css">
+    <link rel="stylesheet" href="./styles/card-detail.css">
     <style>
         *{
             font-family: Helvetica, Arial, sans-serif;
@@ -32,7 +32,7 @@
 
 <body>
     <header id="navbarPlaceholder"></header>
-    <main style="background-color: #09243f;color: white;">
+    <main style="background-color: #09243f;color: white;height: 100vh;">
         <h2 class="p-2 mb-3" style="background-color: #09243f;color: white;text-align: center;">Recommend cards:</h2>
         <div class="container">
             <div id="eachCard" class="row row-cols-auto">
@@ -51,7 +51,7 @@
                             <div>
                                 <div class="d-grid gap-3">
                                     <img id="card-img" style="width: 100%; height: auto" src="" alt="sample card">
-                                    <a href="./card_detail.html" class="btn btn-info">Details</a>
+                                    <a href="./card-detail.html" class="btn btn-info">Details</a>
                                     <a href="#" class="btn btn-info" id="save">Save</a>
                                     <p id="inform" class="text-center"></p>
                                 </div>
@@ -67,7 +67,7 @@
     </main>
     <nav id="footerPlaceholder"></nav>
 
-    <script src="./scripts/firebaseAPI_template.js"></script>
+    <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/recommend.js"></script>
     <script src="./scripts/skeleton.js"></script>
 

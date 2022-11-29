@@ -47,7 +47,7 @@ function getSaved(user) {
                         
                         newcard.querySelector('.card-title').innerHTML = title;
                         newcard.querySelector('#description').innerHTML = description;
-                        newcard.querySelector('#card-img').src = `./images/card_img${code[code.length - 1]}.svg`;
+                        newcard.querySelector('#card-img').src = `./images/card-img${code[code.length - 1]}.svg`;
                         all_links = newcard.querySelectorAll('a')
                         all_links.forEach((a) => {
                             a.onclick = () => setCardData(code)

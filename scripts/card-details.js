@@ -67,7 +67,7 @@ function displayCard(){
                 document.getElementById('extra_fee').innerHTML = `Extra fees: ${extra_fee}`
                 document.getElementById('reward').innerHTML = reward
                 document.getElementById('benefit').innerHTML = benefit
-                document.getElementById('card_img').src = `../images/card_img${code[code.length - 1]}.svg`
+                document.getElementById('card_img').src = `../images/card-img${code[code.length - 1]}.svg`
                 document.getElementById('back_btn').onclick = back_handler
                 document.getElementById('save').onclick = () => saveCard(code)
 
@@ -97,7 +97,7 @@ function writeReview() {
                         name: userName,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(() => {
-                        window.location.href = "card_detail.html"; 
+                        window.location.href = "card-detail.html"; 
                     })
                 })
         } else {
