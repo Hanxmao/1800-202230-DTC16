@@ -1,6 +1,6 @@
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        //will direct to history page whenever use click the "arrow left" icon
+        //call back_handler function when button being clicked
         document.getElementById('back_btn').onclick = back_handler
         //selectHandler function will trigger whenever user changed selects value
         selectHandler()
@@ -11,6 +11,7 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
+//will direct to history page whenever use click the "arrow left" icon
 back_handler = () => {
     window.history.back();
 }

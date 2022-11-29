@@ -2,7 +2,7 @@ function insertName() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       user_Name = user.displayName;
-      $("#name-goes-here").text(user_Name); //using jquery
+      $("#name-goes-here").text(user_Name); //using jquery to present the user name
     } else {
       //alert user and redirect to login page if user is not login
       alert("Please Log In to process the page.");

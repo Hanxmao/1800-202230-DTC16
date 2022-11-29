@@ -4,6 +4,7 @@ let saved_cards
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+        // read the value in saved_cards filed in current user document
         currentUser = db.collection("users").doc(user.uid)
         currentUser.get().then(userDoc => {
             saved_cards = userDoc.data().saved_cards;
