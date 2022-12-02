@@ -1,4 +1,4 @@
-## My Web Application Credo
+## Our Web Application Credo
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -7,11 +7,23 @@
 
 ## General Info
 
+Our web is called Credo, which aim to help people who want to apply for or already own credit products; to save their time and energy in applying by offering them recommendations based on their special needs.
 
-This browser based web application to ... 
+What you can do in Credo:<br>
+* Browse through the credit card list by categories
+* Check every detail about the credit card
+* Compare different credit cards in a table
+* Save your favorite credit cards
+* Use currency convertor to help you convert between different currency
+* Use mortgage calculator to generate the monthly and annually payment
+* Get tips and advices
+* Edit your account profile
+<br>
+<br>
+Team members:
 * Hi, my name is Paolo.
 * Hi my name is Jack. I love cats...
-* Hi, my name is Han. 
+* Hi, my name is [Han](https://github.com/Hanxmao). Find me in [LinkedIn](https://www.linkedin.com/in/hanxiaomao/).
 ## Technologies
 
 Technologies used for this project:
