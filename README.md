@@ -20,10 +20,13 @@ What you can do in Credo:<br>
 * Edit your account profile
 <br>
 <br>
+
 Team members:
+
 * Hi, my name is Paolo.
 * Hi my name is Jack. I love cats...
 * Hi, my name is [Han](https://github.com/Hanxmao). Find me in [LinkedIn](https://www.linkedin.com/in/hanxiaomao/).
+
 ## Technologies
 
 Technologies used for this project:
